@@ -8,15 +8,15 @@ var gulp = require('gulp'),
     sftp = require('gulp-sftp');
 
 // sftp
-gulp.task('sftp', function(){
-    gulp.src("dist/**/*")
+/*gulp.task('sftp', function(){
+    gulp.src("dist/!**!/!*")
         .pipe(sftp({
             host: "",
             user: "",
             pass: "",
             remotePath: ""
         }))
-})
+})*/
 
 // clean
 gulp.task('clean', function(){
