@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 gulp.task('sftp', function(){
     gulp.src("dist/**/*")
         .pipe(sftp({
-            host: "",
+            host: "asdasdasd",
             user: "",
             pass: "",
             remotePath: ""
