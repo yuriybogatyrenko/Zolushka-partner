@@ -4,7 +4,7 @@
 
 # IntelliJ project files
 .idea
-npm_modules
-out
-gen
+node_modules
+*.log
 app/bower_components
+dist
