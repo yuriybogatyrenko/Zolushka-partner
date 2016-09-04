@@ -1,9 +1,7 @@
 {
   "name": "gulp_project",
   "version": "0.0.1",
-  "description": "Gulp testing project",
+  "description": "Gulp first application",
   "author": "Yuriy Bogatyrenko",
-  "dependencies": {
-    "normalize-css": "normalize.css#^4.2.0"
-  }
+  "dependencies": {}
 }
