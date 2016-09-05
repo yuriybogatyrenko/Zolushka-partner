@@ -6,31 +6,79 @@ var gulp = require('gulp'),
     minifyCss = require('gulp-minify-css'),
     clean = require('gulp-clean'),
     compass = require('gulp-compass'),
-    jade = require('gulp-jade'),
-    sftp = require('gulp-sftp');
+    pug = require('gulp-pug'),
+    sftp = require('gulp-sftp'),
+    connect = require('gulp-connect');
 
+/* SOURCES --------------------------------------------------------------------
+---------------------------------------------------------------------------- */
+var sources = {
+    html: {
+        src: 'app/*.html',
+        dist: 'app/'
+    },
+    css: {dist: 'app/css'},
+    js: {dist: 'app/js'},
+    pug: {
+        src: 'app/pug/*.pug',
+        watch: 'app/pug/**/*.pug',
+        dist: 'app/'
+    },
+    sass: {
+        src: 'app/sass/*.sass',
+        watch: 'app/sass/**/*.sass',
+        dist: 'app/sass'
+    },
+    bower: {src: 'app/bower_components'}
+};
 
-//jade
-gulp.task('jade', function () {
-  gulp.src('app/jade/*.jade')
-      .pipe(jade({
+/* DEVELOPMENT GULP TASKS ------------------------------------------------------
+ ---------------------------------------------------------------------------- */
+
+/* PUG ---------------------------------------------------------------------- */
+gulp.task('pug', function () {
+  gulp.src(sources.pug.src)
+      .pipe(pug({
         pretty: true
       }))
-      .pipe(gulp.dest('app/'));
+      .pipe(gulp.dest(sources.pug.dist))
+      .pipe(connect.reload());
 });
 
-// compass
+/* COMPASS ------------------------------------------------------------------ */
 gulp.task('compass', function () {
-  gulp.src('app/sass/**/*')
+  gulp.src(sources.sass.watch)
       .pipe(compass({
-          sass: 'app/sass',
-          css: 'app/css',
-          js: 'app/js'
+          sass: sources.sass.dist,
+          css: sources.css.dist,
+          js: sources.js.dist
       }))
-      .pipe(gulp.dest('app/css'));
+      .pipe(gulp.dest(sources.css.dist))
+      .pipe(connect.reload());
 });
 
-// sftp
+/* BOWER --------------------------------------------------------------------- */
+gulp.task('bower', function () {
+    gulp.src(sources.html.src)
+        .pipe(wiredep({
+            directory: sources.bower.src
+        }))
+        .pipe(gulp.dest('app'));
+});
+
+/* CONNECT ------------------------------------------------------------------- */
+gulp.task('connect', function () {
+    connect.server({
+        root: 'app',
+        port: 3000,
+        livereload: true
+    });
+});
+
+/* PRODUCTION GULP TASKS ------------------------------------------------------
+ ---------------------------------------------------------------------------- */
+
+/* SFTP --------------------------------------------------------------------- */
 gulp.task('sftp', function(){
     gulp.src("dist/**/*")
         .pipe(sftp({
@@ -41,16 +89,16 @@ gulp.task('sftp', function(){
         }));
 });
 
-// clean
+/* CLEAN -------------------------------------------------------------------- */
 gulp.task('clean', function(){
     gulp.src('dist', {read: false})
         .pipe(clean());
 });
 
-// Build
+/* BUILD -------------------------------------------------------------------- */
 gulp.task('build',["clean"], function(){
 
-    return gulp.src("app/*.html")
+    return gulp.src(sources.html.src)
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', minifyCss()))
@@ -58,20 +106,12 @@ gulp.task('build',["clean"], function(){
         .pipe(gulp.dest('dist'));
 });
 
-// Bower
-gulp.task('bower', function () {
-    gulp.src('app/*.html')
-        .pipe(wiredep({
-            directory: "app/bower_components"
-        }))
-        .pipe(gulp.dest('app'));
-});
-
-
-// watch
-gulp.task('default', function () {
+/* DEFAULT AND GULP WATCHER ----------------------------------------------------
+ ---------------------------------------------------------------------------- */
+gulp.task('watch', function () {
     // gulp.watch('bower.json', ["bower"]);
-    gulp.watch('app/sass/**/*', ['compass']);
-
-    gulp.watch('app/jade/*.jade', ["jade"]);
+    gulp.watch(sources.sass.watch, ['compass']);
+    gulp.watch(sources.pug.watch, ["pug"]);
 });
+
+gulp.task('default', ['connect', 'pug', 'compass', 'watch']);
