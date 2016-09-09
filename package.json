@@ -15,7 +15,11 @@
     "gulp-sftp": "^0.1.5",
     "gulp-uglify": "^2.0.0",
     "gulp-useref": "^3.1.0",
+    "gulp-util": "^3.0.7",
     "useref": "^1.2.0",
     "wiredep": "^4.0.0"
+  },
+  "dependencies": {
+    "gulp-twig": "^0.5.0"
   }
 }

@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     compass = require('gulp-compass'),
     pug = require('gulp-pug'),
+    twig = require('gulp-twig'),
     sftp = require('gulp-sftp'),
     connect = require('gulp-connect');
 
@@ -22,6 +23,11 @@ var sources = {
     pug: {
         src: 'app/pug/*.pug',
         watch: 'app/pug/**/*.pug',
+        dist: 'app/'
+    },
+    twig: {
+        src: 'app/twig/*.twig',
+        watch: 'app/twig/**/*.twig',
         dist: 'app/'
     },
     sass: {
@@ -43,6 +49,23 @@ gulp.task('pug', function () {
       }))
       .pipe(gulp.dest(sources.pug.dist))
       .pipe(connect.reload());
+});
+
+/* TWIG --------------------------------------------------------------------- */
+gulp.task('twig', function () {
+    gulp.src(sources.twig.src)
+        .pipe(twig({
+            data: {
+                title: 'Gulp and Twig',
+                benefits: [
+                    'Fast',
+                    'Flexible',
+                    'Secure'
+                ]
+            }
+        }))
+        .pipe(gulp.dest(sources.twig.dist))
+        .pipe(connect.reload());
 });
 
 /* COMPASS ------------------------------------------------------------------ */
@@ -111,7 +134,8 @@ gulp.task('build',["clean"], function(){
 gulp.task('watch', function () {
     // gulp.watch('bower.json', ["bower"]);
     gulp.watch(sources.sass.watch, ['compass']);
-    gulp.watch(sources.pug.watch, ["pug"]);
+    // gulp.watch(sources.pug.watch, ["pug"]);
+    gulp.watch(sources.twig.watch, ["twig"]);
 });
 
-gulp.task('default', ['connect', 'pug', 'compass', 'watch']);
+gulp.task('default', ['connect', 'twig', 'compass', 'watch']);
