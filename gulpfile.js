@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     twig = require('gulp-twig'),
     sftp = require('gulp-sftp'),
     prettify = require('gulp-html-prettify'),
+    htmlbeautify = require('gulp-html-beautify'),
     callback = require('gulp-callback'),
     connect = require('gulp-connect');
 
@@ -32,7 +33,7 @@ var sources = {
         watch: 'app/twig/**/*.twig',
         temp_dist: 'app/twig_html/',
         temp_dist_html: 'app/twig_html/*.html',
-        dist: 'app/twig'
+        dist: 'app/'
     },
     sass: {
         src: 'app/sass/*.sass',
@@ -62,17 +63,17 @@ gulp.task('twig', function () {
         .pipe(gulp.dest(sources.twig.temp_dist))
         .pipe(callback(function () {
             gulp.src(sources.twig.temp_dist_html)
-                .pipe(prettify({
-                    indent_char: ' ',
-                    indent_size: 4
-                }))
-                .pipe(gulp.dest(sources.html.dist))
-                .on('end', function () {
+                .pipe(htmlbeautify())
+                .pipe(gulp.dest(sources.twig.dist))
+                .pipe(callback(function () {
                     gulp.src(sources.twig.temp_dist, {read: false})
                         .pipe(clean());
-                });
+                }));
         }))
         .pipe(connect.reload());
+
+
+    return null;
 });
 
 /* COMPASS ------------------------------------------------------------------ */
