@@ -31,6 +31,7 @@ var sources = {
         src: 'app/twig/*.twig',
         watch: 'app/twig/**/*.twig',
         temp_dist: 'app/twig_html/',
+        temp_dist_html: 'app/twig_html/*.html',
         dist: 'app/twig'
     },
     sass: {
@@ -60,18 +61,18 @@ gulp.task('twig', function () {
         .pipe(twig())
         .pipe(gulp.dest(sources.twig.temp_dist))
         .pipe(callback(function () {
-            gulp.src(sources.twig.temp_dist)
+            gulp.src(sources.twig.temp_dist_html)
                 .pipe(prettify({
                     indent_char: ' ',
                     indent_size: 4
                 }))
-                .pipe(gulp.dest(sources.twig.dist))
-                .pipe(connect.reload());
-            // .on('end', function () {
-            //     gulp.src(sources.twig.temp_dist, {read: false})
-            //         .pipe(clean());
-            // });
-        }));
+                .pipe(gulp.dest(sources.html.dist))
+                .on('end', function () {
+                    gulp.src(sources.twig.temp_dist, {read: false})
+                        .pipe(clean());
+                });
+        }))
+        .pipe(connect.reload());
 });
 
 /* COMPASS ------------------------------------------------------------------ */
