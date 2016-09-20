@@ -10,3 +10,7 @@ body {
 h1 {
   font-weight: normal;
 }
+
+p {
+  background: #ccc;
+}

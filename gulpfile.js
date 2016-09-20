@@ -9,6 +9,8 @@ var gulp = require('gulp'),
     pug = require('gulp-pug'),
     twig = require('gulp-twig'),
     sftp = require('gulp-sftp'),
+    prettify = require('gulp-html-prettify'),
+    callback = require('gulp-callback'),
     connect = require('gulp-connect');
 
 /* SOURCES --------------------------------------------------------------------
@@ -28,7 +30,8 @@ var sources = {
     twig: {
         src: 'app/twig/*.twig',
         watch: 'app/twig/**/*.twig',
-        dist: 'app/'
+        temp_dist: 'app/twig_html/',
+        dist: 'app/twig'
     },
     sass: {
         src: 'app/sass/*.sass',
@@ -54,18 +57,21 @@ gulp.task('pug', function () {
 /* TWIG --------------------------------------------------------------------- */
 gulp.task('twig', function () {
     gulp.src(sources.twig.src)
-        .pipe(twig({
-            data: {
-                title: 'Gulp and Twig',
-                benefits: [
-                    'Fast',
-                    'Flexible',
-                    'Secure'
-                ]
-            }
-        }))
-        .pipe(gulp.dest(sources.twig.dist))
-        .pipe(connect.reload());
+        .pipe(twig())
+        .pipe(gulp.dest(sources.twig.temp_dist))
+        .pipe(callback(function () {
+            gulp.src(sources.twig.temp_dist)
+                .pipe(prettify({
+                    indent_char: ' ',
+                    indent_size: 4
+                }))
+                .pipe(gulp.dest(sources.twig.dist))
+                .pipe(connect.reload());
+            // .on('end', function () {
+            //     gulp.src(sources.twig.temp_dist, {read: false})
+            //         .pipe(clean());
+            // });
+        }));
 });
 
 /* COMPASS ------------------------------------------------------------------ */
