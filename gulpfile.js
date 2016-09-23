@@ -72,9 +72,9 @@ gulp.task('twig', function () {
                         gulp.src(sources.twig.temp_dist, {read: false})
                             .pipe(clean());
                     }, 500);
-                }));
-        }))
-        .pipe(connect.reload());
+                }))
+                .pipe(connect.reload());
+        }));
 
 
     return null;
