@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     sftp = require('gulp-sftp'),
     htmlbeautify = require('gulp-html-beautify'),
     callback = require('gulp-callback'),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+    plumber = require('gulp-plumber');
 
 /* SOURCES --------------------------------------------------------------------
 ---------------------------------------------------------------------------- */
@@ -48,6 +49,7 @@ var sources = {
 /* PUG ---------------------------------------------------------------------- */
 gulp.task('pug', function () {
   gulp.src(sources.pug.src)
+      .pipe(plumber())
       .pipe(pug({
         pretty: true
       }))
@@ -58,6 +60,7 @@ gulp.task('pug', function () {
 /* TWIG --------------------------------------------------------------------- */
 gulp.task('twig', function () {
     gulp.src(sources.twig.src)
+        .pipe(plumber())
         .pipe(twig())
         .pipe(gulp.dest(sources.twig.temp_dist))
         .pipe(callback(function () {
@@ -80,6 +83,7 @@ gulp.task('twig', function () {
 /* COMPASS ------------------------------------------------------------------ */
 gulp.task('compass', function () {
   gulp.src(sources.sass.watch)
+      .pipe(plumber())
       .pipe(compass({
           sass: sources.sass.dist,
           css: sources.css.dist,
