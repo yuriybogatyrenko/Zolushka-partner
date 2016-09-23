@@ -9,7 +9,6 @@ var gulp = require('gulp'),
     pug = require('gulp-pug'),
     twig = require('gulp-twig'),
     sftp = require('gulp-sftp'),
-    prettify = require('gulp-html-prettify'),
     htmlbeautify = require('gulp-html-beautify'),
     callback = require('gulp-callback'),
     connect = require('gulp-connect');
@@ -66,8 +65,10 @@ gulp.task('twig', function () {
                 .pipe(htmlbeautify())
                 .pipe(gulp.dest(sources.twig.dist))
                 .pipe(callback(function () {
-                    gulp.src(sources.twig.temp_dist, {read: false})
-                        .pipe(clean());
+                    setTimeout(function () {
+                        gulp.src(sources.twig.temp_dist, {read: false})
+                            .pipe(clean());
+                    }, 500);
                 }));
         }))
         .pipe(connect.reload());
@@ -128,13 +129,14 @@ gulp.task('clean', function(){
 
 /* BUILD -------------------------------------------------------------------- */
 gulp.task('build',["clean"], function(){
-
-    return gulp.src(sources.html.src)
-        .pipe(useref())
-        .pipe(gulpif('*.js', uglify()))
-        .pipe(gulpif('*.css', minifyCss()))
-        .pipe(useref())
-        .pipe(gulp.dest('dist'));
+    setTimeout(function () {
+        return gulp.src(sources.html.src)
+            .pipe(useref())
+            .pipe(gulpif('*.js', uglify()))
+            .pipe(gulpif('*.css', minifyCss()))
+            .pipe(useref())
+            .pipe(gulp.dest('dist'));
+    }, 500);
 });
 
 /* DEFAULT AND GULP WATCHER ----------------------------------------------------
