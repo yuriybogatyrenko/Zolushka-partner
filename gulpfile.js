@@ -29,8 +29,13 @@ var sources = {
         src: 'app/*.html',
         dist: 'app/'
     },
-    css: {dist: 'app/css'},
-    js: {dist: 'app/js'},
+    css: {
+        dist: 'app/css'
+    },
+    js: {
+        dist: 'app/js',
+        watch: 'app/js/*.js'
+    },
     pug: {
         src: 'app/pug/*.pug',
         watch: 'app/pug/**/*.pug',
@@ -105,23 +110,27 @@ gulp.task('twig', function () {
                 // .pipe(notify('TWIG was compiled'));
         }));
 
-
     return null;
 });
 
 /* SPRITES ------------------------------------------------------------------ */
 gulp.task('sprite', function() {
-    var spriteData =
-        gulp.src(sources.images.icons.default)
-            .pipe(spritesmith({
-                imgName: '../images/sprite.png',
-                retinaSrcFilter: [sources.images.icons.retina],
-                retinaImgName: '../images/sprite@2x.png',
-                cssName: '_sprites.sass'
-            }));
+    var spriteData;
 
-    spriteData.img.pipe(gulp.dest(sources.images.dist));
+    spriteData = gulp.src(sources.images.icons.default)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(spritesmith({
+            retinaSrcFilter: sources.images.icons.retina,
+            retinaImgName: '../images/sprite@2x.png',
+            cssName: '_sprites.sass',
+            imgName: '../images/sprite.png'
+        }));
+
     spriteData.css.pipe(gulp.dest(sources.sass.dist));
+
+    return spriteData.img.pipe(gulp.dest(sources.images.dist));
 });
 
 /* SASS --------------------------------------------------------------------- */
@@ -131,8 +140,10 @@ gulp.task('sass', ['sprite'], function() {
             errorHandler: onError
         }))
         .pipe(sass({outputStyle: 'compressed'}))
-        .pipe(gulp.dest(sources.css.dist))
-        .pipe(prefix('last 2 versions'))
+        .pipe(prefix({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(sources.css.dist))
@@ -196,6 +207,8 @@ gulp.task('watch', function () {
     gulp.watch(sources.sass.watch, ['sass']);
     // gulp.watch(sources.pug.watch, ["pug"]);
     gulp.watch(sources.twig.watch, ["twig"]);
+    gulp.watch(sources.images.icons.default, ["sass"]);
+    gulp.watch(sources.js.watch).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['browser-sync', 'twig', 'sass', 'watch']);
