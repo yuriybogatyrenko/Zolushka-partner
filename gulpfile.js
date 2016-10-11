@@ -1,18 +1,26 @@
-var gulp = require('gulp'),
-    useref = require('gulp-useref'),
-    wiredep = require('wiredep').stream,
-    gulpif = require('gulp-if'),
-    uglify = require('gulp-uglify'),
-    minifyCss = require('gulp-minify-css'),
-    clean = require('gulp-clean'),
-    compass = require('gulp-compass'),
-    pug = require('gulp-pug'),
-    twig = require('gulp-twig'),
-    sftp = require('gulp-sftp'),
+/* DEV PLUGINS------------------------------------------------------------------
+ ---------------------------------------------------------------------------- */
+var gulp         = require('gulp'),
+    plumber      = require('gulp-plumber'),
+    pug          = require('gulp-pug'),
+    twig         = require('gulp-twig'),
     htmlbeautify = require('gulp-html-beautify'),
-    callback = require('gulp-callback'),
-    connect = require('gulp-connect'),
-    plumber = require('gulp-plumber');
+    sass         = require("gulp-sass"),
+    spritesmith  = require('gulp.spritesmith'),
+    prefix       = require("gulp-autoprefixer"),
+    minifyCss    = require('gulp-minify-css'),
+    uglify       = require('gulp-uglify'),
+    sourcemaps   = require("gulp-sourcemaps"),
+    callback     = require('gulp-callback'),
+    clean        = require('gulp-clean'),
+    notify       = require('gulp-notify'),
+    browserSync  = require('browser-sync');
+
+/* PRODUCTION PLUGINS ----------------------------------------------------------
+ ---------------------------------------------------------------------------- */
+var useref       = require('gulp-useref'),
+    wiredep      = require('wiredep').stream,
+    gulpif       = require('gulp-if');
 
 /* SOURCES --------------------------------------------------------------------
 ---------------------------------------------------------------------------- */
@@ -40,27 +48,47 @@ var sources = {
         watch: 'app/sass/**/*.sass',
         dist: 'app/sass'
     },
-    bower: {src: 'app/bower_components'}
+    bower: {src: 'app/bower_components'},
+    images: {
+        icons: {
+            default: 'app/images/icons/*.png',
+            retina: 'app/images/icons/*@2x.png'
+        },
+        dist: 'app/images'
+    }
 };
 
 /* DEVELOPMENT GULP TASKS ------------------------------------------------------
  ---------------------------------------------------------------------------- */
 
+/* Error Handler ---------------------------------------------------------------
+ ---------------------------------------------------------------------------- */
+
+var onError = function(err) {
+    console.log(err);
+    this.emit('end');
+};
+
 /* PUG ---------------------------------------------------------------------- */
 gulp.task('pug', function () {
-  gulp.src(sources.pug.src)
-      .pipe(plumber())
-      .pipe(pug({
-        pretty: true
-      }))
-      .pipe(gulp.dest(sources.pug.dist))
-      .pipe(connect.reload());
+    gulp.src(sources.pug.src)
+        .pipe(plumber({
+          errorHandler: onError
+        }))
+        .pipe(pug({
+            pretty: true
+        }))
+        .pipe(gulp.dest(sources.pug.dist))
+        .pipe(browserSync.reload({stream: true}));
+        // .pipe(notify('PUG was compiled'));
 });
 
 /* TWIG --------------------------------------------------------------------- */
 gulp.task('twig', function () {
     gulp.src(sources.twig.src)
-        .pipe(plumber())
+        .pipe(plumber({
+            errorHandler: onError
+        }))
         .pipe(twig())
         .pipe(gulp.dest(sources.twig.temp_dist))
         .pipe(callback(function () {
@@ -73,24 +101,43 @@ gulp.task('twig', function () {
                             .pipe(clean());
                     }, 500);
                 }))
-                .pipe(connect.reload());
+                .pipe(browserSync.reload({stream: true}));
+                // .pipe(notify('TWIG was compiled'));
         }));
 
 
     return null;
 });
 
-/* COMPASS ------------------------------------------------------------------ */
-gulp.task('compass', function () {
-  gulp.src(sources.sass.watch)
-      .pipe(plumber())
-      .pipe(compass({
-          sass: sources.sass.dist,
-          css: sources.css.dist,
-          js: sources.js.dist
-      }))
-      .pipe(gulp.dest(sources.css.dist))
-      .pipe(connect.reload());
+/* SPRITES ------------------------------------------------------------------ */
+gulp.task('sprite', function() {
+    var spriteData =
+        gulp.src(sources.images.icons.default)
+            .pipe(spritesmith({
+                imgName: '../images/sprite.png',
+                retinaSrcFilter: [sources.images.icons.retina],
+                retinaImgName: '../images/sprite@2x.png',
+                cssName: '_sprites.sass'
+            }));
+
+    spriteData.img.pipe(gulp.dest(sources.images.dist));
+    spriteData.css.pipe(gulp.dest(sources.sass.dist));
+});
+
+/* SASS --------------------------------------------------------------------- */
+gulp.task('sass', ['sprite'], function() {
+    return gulp.src(sources.sass.src)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(gulp.dest(sources.css.dist))
+        .pipe(prefix('last 2 versions'))
+        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(sources.css.dist))
+        .pipe(browserSync.reload({stream: true}));
+        // .pipe(notify('SASS was compiled'));
 });
 
 /* BOWER --------------------------------------------------------------------- */
@@ -102,12 +149,10 @@ gulp.task('bower', function () {
         .pipe(gulp.dest('app'));
 });
 
-/* CONNECT ------------------------------------------------------------------- */
-gulp.task('connect', function () {
-    connect.server({
-        root: 'app',
-        port: 3000,
-        livereload: true
+/* BROWSER SYNC -------------------------------------------------------------- */
+gulp.task('browser-sync', function () {
+    browserSync.init({
+        server: "./app"
     });
 });
 
@@ -139,7 +184,8 @@ gulp.task('build',["clean"], function(){
             .pipe(gulpif('*.js', uglify()))
             .pipe(gulpif('*.css', minifyCss()))
             .pipe(useref())
-            .pipe(gulp.dest('dist'));
+            .pipe(gulp.dest('dist'))
+            .pipe(notify('BUILD was ended'));
     }, 500);
 });
 
@@ -147,9 +193,9 @@ gulp.task('build',["clean"], function(){
  ---------------------------------------------------------------------------- */
 gulp.task('watch', function () {
     // gulp.watch('bower.json', ["bower"]);
-    gulp.watch(sources.sass.watch, ['compass']);
+    gulp.watch(sources.sass.watch, ['sass']);
     // gulp.watch(sources.pug.watch, ["pug"]);
     gulp.watch(sources.twig.watch, ["twig"]);
 });
 
-gulp.task('default', ['connect', 'twig', 'compass', 'watch']);
+gulp.task('default', ['browser-sync', 'twig', 'sass', 'watch']);
