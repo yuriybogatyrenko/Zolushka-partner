@@ -1,0 +1,24 @@
+@font-face {
+    font-family: EtelkaReg;
+    src: url(../fonts/EtelkaReg.eot);
+    src: url(../fonts/EtelkaReg.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/EtelkaReg.woff) format("woff"),
+    url(../fonts/EtelkaReg.woff2) format("woff2"),
+    url(../fonts/EtelkaReg.svg#EtelkaReg) format("svg"),
+    url(../fonts/EtelkaReg.ttf) format("truetype");
+    url(../fonts/EtelkaReg.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: EtelkaBol;
+    src: url(../fonts/EtelkaBol.eot);
+    src: url(../fonts/EtelkaBol.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/EtelkaBol.woff) format("woff"),
+    url(../fonts/EtelkaBol.woff2) format("woff2"),
+    url(../fonts/EtelkaBol.svg#EtelkaBol) format("svg"),
+    url(../fonts/EtelkaBol.ttf) format("truetype");
+    url(../fonts/EtelkaBol.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}

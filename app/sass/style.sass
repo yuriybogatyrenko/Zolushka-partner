@@ -1,0 +1,248 @@
+@import fonts.css
+@import "sprites"
+
+.header
+	padding-top: 35px
+
+.container
+	width: 1170px
+	padding: 0
+	margin: 0 auto
+
+.container-fluid
+	padding: 0
+
+.service-b
+	font-size: 0
+
+.ico
+	display: inline-block
+
+.ico-tel
+	+retina-sprite($tel-group)
+
+.ico-magnifier
+	+retina-sprite($magnifier-group)
+
+.ico-calendar
+	margin-right: 10px
+	+retina-sprite($calendar-group)
+
+.tel-b
+	padding: 20px 30px 0 30px
+	display: inline-block
+	vertical-align: top
+	font-size: 0
+
+.tel-b__ico-wrap
+	margin: 5px 10px 0 0
+	display: inline-block
+	vertical-align: top
+
+.tel-b__links
+	display: inline-block
+	vertical-align: middle
+
+.tel-b__number
+	display: block
+	font-family: EtelkaReg
+	font-size: 30px
+	line-height: 36px
+	color: #37329d
+	transition: 0.5s ease 0s
+
+	&:hover
+		color: #839fcc
+		text-decoration: none
+
+.search-b
+	padding: 10px 30px 0 30px
+	display: inline-block
+	vertical-align: top
+
+.search-b__entry-field-wrap
+	width: 100%
+	position: relative
+
+.search-b__entry-field
+	height: 38px
+	padding-right: 35px
+	border: 1px solid #3073b6
+	-webkit-border-radius: 10px
+	-moz-border-radius: 10px
+	border-radius: 10px
+	color: #828282
+
+.search-b__btn
+	border: none
+	background: none
+	outline: none
+	position: absolute
+	top: 50%
+	margin-top: -15px
+	right: 10px
+
+.links-b
+	padding: 10px 25px 0 35px
+	display: inline-block
+	vertical-align: top
+
+.menu
+	padding: 0
+	margin: 10px 0
+	border: none
+	-webkit-border-radius: 0
+	-moz-border-radius: 0
+	border-radius: 0
+	background: none
+
+.achievement-b
+	width: 154px
+	height: 90px
+	background: linear-gradient(to bottom, #ffffff, #cee0f2)
+	border: 3px solid #3073b6
+
+.subscribe-b
+	width: 400px
+	float: right
+
+.subscribe-b__entry-field
+	width: 210px
+	height: 38px
+	display: inline-block
+
+.footer
+	padding: 40px 0 50px 0
+	background: #37329d
+
+.soc-b
+	padding: 0
+	list-style: none
+	font-size: 0
+
+.soc-b__item
+	display: inline-block
+
+.soc-b__link
+	width: 32px
+	height: 32px
+	margin-right: 5px
+	background: #3073b6
+	position: relative
+	-webkit-border-radius: 5px
+	-moz-border-radius: 5px
+	border-radius: 5px
+	display: block
+	transition: 0.5s ease 0s
+
+	&:hover
+		background: #295b8e
+
+.soc-b__ico
+	display: inline-block
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+
+.soc-b__ico-instagram
+	+retina-sprite($instagram-group)
+
+.soc-b__ico-vk
+	+retina-sprite($vk-group)
+
+.soc-b__ico-classmates
+	+retina-sprite($classmates-group)
+
+.soc-b__ico-mail-ru
+	+retina-sprite($mail-ru-group)
+
+.soc-b__ico-f
+	display: inline-block
+	position: absolute
+	top: auto
+	left: auto
+	bottom: 0
+	right: 5px
+	transform: translate(0, 0)
+	+retina-sprite($f-group)
+
+.soc-b__ico-twitter
+	+retina-sprite($twitter-group)
+
+.soc-b__ico-g-plus
+	+retina-sprite($g-plus-group)
+
+
+
+
+
+
+
+
+.mb-10
+	margin-bottom: 10px
+
+.mb-15
+	margin-bottom: 15px
+
+.mb-20
+	margin-bottom: 15px
+
+.mb-35
+	margin-bottom: 35px
+
+.link
+	display: block
+	text-decoration: underline
+	transition: 0.5s ease 0s
+
+	&_blue
+		color: #3072b6
+
+		&-small-bol
+			font-family: EtelkaBol
+			font-size: 15px
+			line-height: 18px
+
+		&-medium-reg
+			font-family: EtelkaReg
+			font-size: 16px
+			line-height: 19px
+
+		&-medium-bol
+			text-decoration: none
+			font-family: EtelkaBol
+			font-size: 20px
+			line-height: 24px
+
+
+		&-big-bol
+			font-family: EtelkaBol
+			font-size: 30px
+			line-height: 36px
+
+		&:hover
+			color: #37329d
+
+.text-purple
+		color: #37329d
+
+.line-vertical-gray
+	position: relative
+
+	&:before
+		height: 95px
+		border-right: 1px solid #aaaaaa
+		position: absolute
+		top: 0
+		left: 0
+		content: ""
+
+.blue
+	width: 100%
+	background: #3073b6
+
+.light-blue
+	width: 100%
+	background: #cee0f2

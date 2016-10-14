@@ -104,7 +104,7 @@ gulp.task('twig', function () {
                     setTimeout(function () {
                         gulp.src(sources.twig.temp_dist, {read: false})
                             .pipe(clean());
-                    }, 500);
+                    }, 1000);
                 }))
                 .pipe(browserSync.reload({stream: true}));
                 // .pipe(notify('TWIG was compiled'));
