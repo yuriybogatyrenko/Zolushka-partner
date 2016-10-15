@@ -44,8 +44,8 @@ var sources = {
     twig: {
         src: 'app/twig/*.twig',
         watch: 'app/twig/**/*.twig',
-        temp_dist: 'app/twig_html/',
-        temp_dist_html: 'app/twig_html/*.html',
+        temp_dist: 'app/.twig-temp/',
+        temp_dist_html: 'app/.twig-temp/*.html',
         dist: 'app/'
     },
     sass: {
@@ -100,12 +100,12 @@ gulp.task('twig', function () {
             gulp.src(sources.twig.temp_dist_html)
                 .pipe(htmlbeautify())
                 .pipe(gulp.dest(sources.twig.dist))
-                .pipe(callback(function () {
+                /*.pipe(callback(function () {
                     setTimeout(function () {
                         gulp.src(sources.twig.temp_dist, {read: false})
                             .pipe(clean());
                     }, 1000);
-                }))
+                }))*/
                 .pipe(browserSync.reload({stream: true}));
                 // .pipe(notify('TWIG was compiled'));
         }));

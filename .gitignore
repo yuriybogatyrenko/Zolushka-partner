@@ -6,3 +6,4 @@ app/bower_components
 app/sass-cache
 dist
 .sass-cache
+.twig-temp
