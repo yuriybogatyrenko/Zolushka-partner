@@ -8,7 +8,7 @@
         _self.doc = doc;
         _self.window = window;
 
-        _self.bootstrap(_self);
+        _self.bootstrap();
     }
 
     YOURAPPNAME.prototype.bootstrap = function() {
