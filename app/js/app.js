@@ -5,10 +5,10 @@
 
         _self.doc = doc;
 
-        _self.constructor(_self);
+        _self.bootstrap(_self);
     }
 
-    YOURAPPNAME.prototype.constructor = function() {
+    YOURAPPNAME.prototype.bootstrap = function() {
         console.log('Paste your app code here...');
     };
 
