@@ -1,7 +1,5 @@
 (function() {
 
-    var app = new YOURAPPNAME(document);
-
     function YOURAPPNAME(doc) {
         var _self = this;
 
@@ -53,5 +51,7 @@
                 callback();
         }
     };
+
+    var app = new YOURAPPNAME(document);
 
 })();
