@@ -11,15 +11,16 @@
 
     YOURAPPNAME.prototype.bootstrap = function() {
         this.appLoad('loading', function () {
-            console.log('Paste your app code here... While app is loading. 4example it may be preloader');
+            console.log('App is loading... Paste your app code here.');
         });
 
         this.appLoad('dom', function () {
-            console.log('Paste your app code here... Pure javascript app code...');
+            console.log('DOM is loaded! Paste your app code here (Pure JS code).');
         });
 
         this.appLoad('full', function (e) {
-            console.log('Paste external app source code here... For example if your use jQuery and something else');
+            console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
+            // Please do not use jQuery ready state function to avoid mass calling document event trigger!
         });
 
     };
