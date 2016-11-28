@@ -18,6 +18,7 @@
 
         this.appLoad('dom', function () {
             console.log('DOM is loaded! Paste your app code here (Pure JS code).');
+            // Do not use jQuery here cause external libs do not loads here...
         });
 
         this.appLoad('full', function (e) {
