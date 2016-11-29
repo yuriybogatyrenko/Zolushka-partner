@@ -71,7 +71,6 @@
     };
 
     YOURAPPNAME.prototype.options = function(string) {
-
         var _self = this;
 
         if (typeof string !='string') return string;
