@@ -21,6 +21,8 @@
             console.log('DOM is loaded! Paste your app code here (Pure JS code).');
             // DOM is loaded! Paste your app code here (Pure JS code).
             // Do not use jQuery here cause external libs do not loads here...
+
+            _self.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
         });
 
         _self.appLoad('full', function (e) {
@@ -54,6 +56,51 @@
                 break;
             default:
                 callback();
+        }
+    };
+
+    YOURAPPNAME.prototype.initSwitcher = function () {
+        var _self = this;
+
+        var switchers = _self.doc.querySelectorAll('[data-switcher]');
+
+        if(switchers && switchers.length > 0) {
+            for(var i=0; i<switchers.length; i++) {
+                var switcher = switchers[i],
+                    switcherOptions = _self.options(switcher.dataset.switcher),
+                    switcherElems = switcher.children,
+                    switcherTargets = _self.doc.querySelector('[data-switcher-target="' + switcherOptions.target + '"]').children;
+
+                for(var y=0; y<switcherElems.length; y++) {
+                    var switcherElem = switcherElems[y],
+                        parentNode = switcher.children,
+                        switcherTarget = switcherTargets[y];
+
+                    if(switcherElem.classList.contains('active')) {
+                        for(var z=0; z<parentNode.length; z++) {
+                            parentNode[z].classList.remove('active');
+                            switcherTargets[z].classList.remove('active');
+                        }
+                        switcherElem.classList.add('active');
+                        switcherTarget.classList.add('active');
+                    }
+
+                    switcherElem.children[0].addEventListener('click', function (elem, target) {
+                        return function (e) {
+                            e.preventDefault();
+                            if(!elem.classList.contains('active')) {
+                                for(var z=0; z<parentNode.length; z++) {
+                                    parentNode[z].classList.remove('active');
+                                    switcherTargets[z].classList.remove('active');
+                                }
+                                elem.classList.add('active');
+                                target.classList.add('active');
+                            }
+                        };
+
+                    }(switcherElem, switcherTarget));
+                }
+            }
         }
     };
 
