@@ -85,20 +85,20 @@
                         switcherTarget.classList.add('active');
                     }
 
-                    switcherElem.children[0].addEventListener('click', function (elem, target) {
+                    switcherElem.children[0].addEventListener('click', function (elem, target, parentNode, targets) {
                         return function (e) {
                             e.preventDefault();
                             if(!elem.classList.contains('active')) {
                                 for(var z=0; z<parentNode.length; z++) {
                                     parentNode[z].classList.remove('active');
-                                    switcherTargets[z].classList.remove('active');
+                                    targets[z].classList.remove('active');
                                 }
                                 elem.classList.add('active');
                                 target.classList.add('active');
                             }
                         };
 
-                    }(switcherElem, switcherTarget));
+                    }(switcherElem, switcherTarget, parentNode, switcherTarget));
                 }
             }
         }

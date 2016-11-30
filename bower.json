@@ -4,5 +4,8 @@
   "description": "Gulp project builder",
   "author": "qube.kz",
   "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "fancybox": "^2.1.5",
+    "bootstrap-slider": "*"
   }
 }
