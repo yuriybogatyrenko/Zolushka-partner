@@ -1,73 +1,164 @@
-<header>
+<header class="page-header">
     <section class="bg-light-gray">
-        <nav class="navbar" role="navigation">
+        <nav class="navbar header" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only">Burger menu button</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav nav-left">
-                        <li class="brdr-r-blue active"><a href="#">Главная</a></li>
-                        <li class="brdr-r-blue"><a href="#">Условия оплаты</a></li>
-                        <li class="brdr-r-blue"><a href="#">Доставка</a></li>
-                        <li class="brdr-r-blue"><a href="#">Гарантии</a></li>
-                        <li class="brdr-r-blue"><a href="#">О компании</a></li>
-                        <li class="brdr-r-blue"><a href="#">Контакты</a></li>
-                        <li class="brdr-r-blue"><a href="#">Новости</a></li>
-                        <li class="brdr-r-blue"><a href="#">Поставщикам</a></li>
-                        <li class="brdr-r-blue"><a href="#">Отзывы</a></li>
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="navbar-nav nav">
+                        <li class="active"><a href="#">Главная</a></li>
+                        <li><a href="#">Условия оплаты</a></li>
+                        <li><a href="#">Доставка</a></li>
+                        <li><a href="#">Гарантии</a></li>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Поставщикам</a></li>
+                        <li><a href="#">Отзывы</a></li>
                     </ul>
-                    <ul class="nav navbar-right">
-                        <li><a href="#">Регистрация</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Войти в кабинет<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Действие</a></li>
-                                <li><a href="#">Другое действие</a></li>
-                                <li><a href="#">Что-то еще</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Отдельная ссылка</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div>
-        </nav>
-    </section>
-    <section class="bg-blue">
-        <nav class="navbar" role="navigation">
-            <div class="container">
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="navbar-form__search-input">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <button type="submit" class="btn btn-default">Отправить</button>
-                    </div>
-                </form>
-                <ul class="nav navbar-right">
-                    <li><a href="#">Акции</a><i class="icon"></i></li>
-                    <li><a href="#">Мои желания</a><i class="icon"></i></li>
-                    <li><a href="#">Корзина пуста, всего 0 тг.</a><i class="icon"></i></li>
+                </div>
+                <!-- /.navbar-collapse -->
+                <ul class="navbar-right nav">
+                    <li class="navbar-right__item">
+                        <ul class="soc">
+                            <li class="soc__item">
+                                <a class="soc__link" href="#">
+                                    <i class="icon icon-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="soc__item">
+                                <a class="soc__link"  href="#">
+                                    <i class="icon icon-vk"></i>
+                                </a>
+                            </li>
+                            <li class="soc__item">
+                                <a class="soc__link"  href="#">
+                                    <i class="icon icon-classmates"></i>
+                                </a>
+                            </li>
+                            <li class="soc__item">
+                                <a class="soc__link"  href="#">
+                                    <i class="icon icon-mail-ru"></i>
+                                </a>
+                            </li>
+                            <li class="soc__item">
+                                <a class="soc__link"  href="#">
+                                    <i class="icon icon-f"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar-right__item">
+                        <div class="authorisation">
+                            <div class="authorisation__inner">
+                                <a class="authorisation__link" href="#">Регистрация</a>
+                            </div>
+                            <div class="dropdown authorisation__inner">
+                                <a href="#" class="dropdown-toggle authorisation__link" data-toggle="dropdown">
+                                    <i class="icon icon-man mr-10"></i><span>Войти в кабинет</span><b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Действие</a></li>
+                                    <li><a href="#">Другое действие</a></li>
+                                    <li><a href="#">Что-то еще</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Отдельная ссылка</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
     </section>
-    <section class="banner-wrap">
+    <section class="page-header__info">
         <div class="container">
-            <div class="fs-0">
-                <div class="banner-left">
-                    <div class="banner-img"></div>
+            <div  class="row">
+                <div class="col-md-4 bdr-r-a-gray">
+                    <div class="logo">
+                        <a class="logo__link">
+                            <img class="img-responsive" src="" alt="" title="kupitrend.kz">
+                        </a>
+                    </div>
                 </div>
-                <div class="banner-right">
-                    <div class="banner-img"></div>
+                <div class="col-md-4 bdr-r-a-gray">
+                    <div class="row info-box">
+                        <div class="col-md-6 fs-0">
+                            <div class="info-box__item">
+                                <span class="circle big blue va-m-b mr-10"><i class="icon icon-box"></i></span>
+                                <span class="info-box__text fs-11 c-blue">Товары в наличии на складе РК</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 fs-0">
+                            <div class="info-box__item">
+                                <div class="circle big blue va-m-b mr-10"><i class="icon icon-auto"></i></div>
+                                <span class="info-box__text fs-11 c-blue">Доставка по РК за 5 дней</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="row call header">
+                        <div class="col-md-7">
+                            <div class="call__link-wrap va-m-b">
+                                <a class="call__link" href="tel:+77776665544">+7 777 666 55 44</a>
+                            </div>
+                        </div>
+                        <div class="col-md-5 fs-0">
+                            <a class="call__toggle">
+                                <div class="circle big orange va-m-b mr-10"><i class="icon icon-tel"></i></div>
+                                <span class="call__toggle-text">Перезвонить мне</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-blue service">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="search">
+                        <form class="search__form">
+                            <div class="search__entry-field">
+                                <input type="text" class="search__input" placeholder="поиск в каталоге">
+                                <button type="submit" class="search__btn">
+                                    <i class="icon icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-8 text-right">
+                    <ul class="service__list va-m-b">
+                        <li class="service__item">
+                            <a class="service__link" href="#"><span>Акции</span><i class="icon icon-gift ml-10"></i>
+                            </a>
+                        </li>
+                        <li class="service__item">
+                            <a class="service__link" href="#"><span>Мои желания</span><i class="icon icon-heart ml-10"></i>
+                            </a>
+                        </li>
+                        <li class="service__item">
+                            <a class="service__link" href="#">
+                                <span>Корзина пуста, всего 0 тг.</span><i class="icon icon-cart ml-10"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>

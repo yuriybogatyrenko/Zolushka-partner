@@ -1,61 +1,191 @@
-$container-large-desktop: 1170px
+$container-large-desktop: 1200px
 
+.container
+    width: $container-large-desktop
 
+.page-header
+    padding-bottom: 0
+    margin: 0
+    border-bottom: none
 
 .navbar
-    border-style: solid
-    border-color: #aaaaaa
-    border-width: 0 0 1px 0
+    border: none
     -webkit-border-radius: 0
     -moz-border-radius: 0
     border-radius: 0
     margin-bottom: 0
+    &.header
+        padding: 10px 0
+        border-bottom: 1px solid #aaaaaa
 
 .navbar-collapse
-    padding: 8px 0 7px 0
-
-.navbar-collapse
+    padding: 5px 0
     &.collapse
-        padding-bottom: 7px
+        display: inline-block !important
+        padding-bottom: 0
 
-.navbar-nav
-    padding: 8px 0 7px 0
-
-.navbar-nav > li
-    padding: 0 10px
-    &:first-child
-        padding-left: 0
-    &:last-child
-        &.brdr-r-blue
-            &:after
-                display: none
-
-.nav > li > a
+.navbar-nav > li > a
     padding: 0
     text-transform: uppercase
     font-size: 11px
 
-.navbar-form
-    padding: 0
-    left: 0
+.navbar
+    &.header
+        .navbar-nav > li
+            display: inline-block
+            padding: 0 8px
+            &:after
+                content: ""
+                display: block
+                width: 1px
+                height: 10px
+                background: #5b8dc2
+                position: absolute
+                top: 50%
+                right: 0
+                transform: translateY(-50%)
+            &:first-child
+                padding-left: 0
+            &:last-child
+                padding-right: 0
+                &:after
+                    display: none
+            > a
+                color: #326cb5
+    &.footer
+        padding: 20px 0
+        .navbar-nav > li
+            display: block
+            float: none
+            > a
+                text-decoration: underline
+                color: #fff
+                &:hover
+                    background: transparent
+
+.nav > li
+    display: inline-block
+
+.navbar-right
+    margin-right: 0
+
+.page-footer
+    padding: 30px 0
 
 
-.brdr-r-blue
-    position: relative
-    &:after
-        content: ""
-        display: block
-        width: 1px
-        height: 10px
-        background: #5b8dc2
-        position: absolute
-        top: 50%
-        right: 0
-        transform: translateY(-50%)
+.mb-20
+    margin-bottom: 20px
+.ml-10
+    margin-left: 10px
+.mr-10
+    margin-right: 10px
+.mr-20
+    margin-right: 20px
+
 .bg-light-gray
     background: #eeeeee
 .bg-blue
     background: #326cb5
 
+.bdr-r-a-gray
+    position: relative
+    &:after
+        content: ""
+        display: block
+        width: 1px
+        height: 100%
+        background: #ababab
+        position: absolute
+        top: 0
+        right: 2%
+
+.bdr-r-a-gradient
+    position: relative
+    &:after
+        content: ""
+        display: block
+        width: 1px
+        height: 100%
+        border-right: 1px solid #2863a5
+        background: #4c87cb
+        position: absolute
+        top: 0
+        right: 2%
+
+.c-white
+    color: #fff
+.c-gray
+    color: gray
+.c-blue
+    color: #326cb5
+
+.tt-u
+    text-transform: uppercase
+.td-u
+    text-decoration: underline
+
 .fs-0
     font-size: 0
+.fs-11
+    font-size: 11px
+.fs-20
+    font-size: 20px
+
+.d-ib
+    display: inline-block
+
+.va-m-b
+    &::before
+        content: ""
+        display: inline-block
+        vertical-align: middle
+        height: 100%
+
+.circle
+    display: inline-block
+    vertical-align: middle
+    padding: 5px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+    border-style: solid
+    border-width: 2px
+    text-align: center
+    &.big
+        width: 50px
+        height: 50px
+    &.small
+        width: 20px
+        height: 20px
+    &.white
+        border-color: #fff
+    &.blue
+        border-color: #326cb5
+    &.orange
+        border-color: #fd2f08
+
+.caret
+    margin-left: 10px
+    border-top: 9px dashed
+    border-right: 7px solid transparent
+    border-left: 7px solid transparent
+
+.icon
+    display: inline-block
+    vertical-align: middle
+.icon-man
+    width: 30px
+    height: 30px
+    background: #326cb5
+.icon-gift
+    width: 30px
+    height: 30px
+    background: #fff
+.icon-heart
+    width: 30px
+    height: 30px
+    background: #fff
+.icon-cart
+    width: 30px
+    height: 30px
+    background: #fff
