@@ -366,9 +366,10 @@ $form-group-margin-bottom: 10px !default
     font-size: 15px
 .btn-xs
     padding: 0 10px
-    line-height: 20
+    line-height: 20px
     text-transform: uppercase
     font-size: 12px
+    +border_radius(5px)
 .btn-primary
     padding: 0 20px
     background: #fff
@@ -396,25 +397,25 @@ $form-group-margin-bottom: 10px !default
     cursor: pointer
 
 
-.input, input
-    padding: 0 10px
+.input-text, input[type="text"]
     outline: none
-.input-default
+.input-text-default
+    padding: 0 10px
     border: 1px solid #aaaaaa
     height: 30px
     font-size: 12px
-.input-sm
+.input-text-sm
     min-width: 58px
     height: 24px
-.input-xs
-    min-width: 48px
-    height: 18px
+.input-text-xs
+    width: 50px
+    height: 20px
+    padding: 0 5px
     font-size: 12px
-    border: 2px solid #9d9d9d
+    border: 2px solid #dadada
     +border_radius(5px)
-.input-primary
+.input-text-primary
     vertical-align: middle
-    padding: 0 10px
     border: 1px solid #fff
     height: 34px
     font-size: 15px
@@ -428,6 +429,71 @@ $form-group-margin-bottom: 10px !default
     &:-ms-input-placeholder
         color: #9d9d9d
 
+.radio
+    display: inline-block
+    padding-left: 25px
+    margin: 0
+    font-size: 15px
+    font-weight: normal
+    cursor: pointer
+.radio__switch
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    outline: none
+    opacity: 0
+    &:checked + .radio__switch-imitator
+        &:before
+            width: 8px
+            height: 8px
+            opacity: 1
+.radio__switch-imitator
+    display: block
+    width: 16px
+    height: 16px
+    border: 1px solid #ababab
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    +border_radius(50%)
+    &:before
+        content: ""
+        display: block
+        width: 16px
+        height: 16px
+        background: #ababab
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        opacity: 0
+        +border_radius(50%)
+        +transition(all 0.5s ease 0s)
+input[type="radio"]
+    margin-top: 0
+.radio input[type="radio"]
+    margin-left: 0
+
+.slider-horizontal
+    width: 238px
+    margin-bottom: 0
+.slider-track
+    height: 5px
+    background: #aaaaaa
+.slider-horizontal .slider-track
+    height: 5px
+.slider-horizontal .slider-selection
+    background: #aaaaaa
+.slider-horizontal
+    .slider-handle
+        margin-top: -7px
+        background: #316cb3
+        +border_radius(50%)
+    .slider-handle:last-child
+        background: #ff290b
+        +border_radius(50%)
 
 .form-group
     margin-bottom: $form-group-margin-bottom
@@ -436,3 +502,6 @@ $form-group-margin-bottom: 10px !default
         margin-bottom: 10px
         &:last-child
             margin-bottom: 0
+
+.h5
+    font-size: 16px

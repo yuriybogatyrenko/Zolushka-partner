@@ -404,11 +404,32 @@
     display: block
     vertical-align: top
     width: 45px
-    height: 45px
+    height: 100%
     position: absolute
     top: 0
     right: 0
     cursor: pointer
+    &[aria-expanded="true"]
+        .icon-plus-gray
+            +sprite(minus)
+
+.catalog-filter
+    border: 1px solid #ababab
+    margin-bottom: 35px
+.catalog-filter__item
+    border-bottom: 1px solid #ababab
+.catalog-filter__item-inner
+    padding: 15px
+.catalog-filter__param-header-wrap
+    padding: 15px
+    background: #eeeeee
+    text-align: center
+.catalog-filter__input-text-wrap
+    margin-right: 4px
+.catalog-filter__radio-wrap
+    margin-bottom: 10px
+    &:last-child
+        margin-bottom: 0
 
 
 .pay-soc-wrap

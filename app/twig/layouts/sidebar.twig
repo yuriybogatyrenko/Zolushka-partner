@@ -252,5 +252,60 @@
             </li>
         </ul>
     </div>
-    <div class="catalog-filter"></div>
+    <div class="catalog-filter">
+        <div class="catalog-filter__item">
+            <div class="catalog-filter__param-header-wrap">
+                <h5 class="catalog-filter__param-header clean">Выбор по параметрам</h5>
+            </div>
+            <div class="catalog-filter__item-inner">
+                <p>Цена</p>
+                <form class="catalog-filter__form">
+                    <div class="mb-15">
+                        <span>от</span>
+                        <span class="catalog-filter__input-text-wrap">
+                            <input type="text" id="slider-range-start-price" class="input-text input-text-default input-text-xs" title="от" data-input-value="">
+                        </span>
+                        <span>до</span>
+                        <span class="catalog-filter__input-text-wrap">
+                            <input type="text" id="slider-range-finish-price" class="input-text input-text-default input-text-xs" title="до" data-input-value="">
+                        </span>
+                        <button type="submit" class="btn btn-default btn-xs">Показать</button>
+                    </div>
+                    <div>
+                        <input type="range" class="slider-range" value="" data-slider-min="10" data-slider-max="1000000" data-slider-step="10" data-slider-value="[300000,700000]" title="Цена">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="catalog-filter__item">
+            <div class="catalog-filter__param-header-wrap">
+                <h5 class="catalog-filter__param-header clean">Торговые марки</h5>
+            </div>
+            <div class="catalog-filter__item-inner">
+                <form class="catalog-filter__form">
+                    <div class="catalog-filter__radio-wrap">
+                        <label class="radio">
+                            <input type="radio" class="radio__switch" name="radio-mark">
+                            <i class="radio__switch-imitator"></i>
+                            Марка 1
+                        </label>
+                    </div>
+                    <div class="catalog-filter__radio-wrap">
+                        <label class="radio">
+                            <input type="radio" class="radio__switch" name="radio-mark">
+                            <i class="radio__switch-imitator"></i>
+                            Марка 2
+                        </label>
+                    </div>
+                    <div class="catalog-filter__radio-wrap">
+                        <label class="radio">
+                            <input type="radio" class="radio__switch" name="radio-mark">
+                            <i class="radio__switch-imitator"></i>
+                            Марка 3
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
