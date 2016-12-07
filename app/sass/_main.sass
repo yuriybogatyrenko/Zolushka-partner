@@ -1,13 +1,20 @@
+@import "mixins/mixins"
+
+
+
 .navbar-right__item
     vertical-align: middle
     margin-right: 15px
     &:last-child
         margin-right: 0
 
+
 .soc
+    display: inline-block
+    vertical-align: middle
     padding-left: 0
-    margin-bottom: 0
     list-style: none
+    text-align: center
     font-size: 0
 .soc__item
     margin-right: 5px
@@ -17,49 +24,124 @@
         margin-right: 0
 .soc__link
     display: block
-    width: 25px
-    height: 25px
-    background: #9d9d9d
-    font-size: 0
+    width: 26px
+    height: 26px
 
+
+.authorisation
+    width: 230px
+    text-align: right
 .authorisation__inner
     display: inline-block
-    vertical-align: middle
     margin-right: 15px
     &:last-child
         margin-right: 0
 .authorisation__link
+    display: inline-block
     padding: 0
     font-size: 11px
     text-decoration: underline
+    +transition(all 0.5s ease 0s)
+    &:hover, &:active, &:focus
+        color: #fd2f08
+        .icon-person
+            +sprite(person-orange)
+    &:visited
+        &:hover, &:active, &:focus
+            color: #fd2f08
+.authorisation__popup
+    width: 265px
+    padding: 15px
+    margin-top: 10px
+    right: -2px
+    +border_radius(0)
+    +transition(all 0.5s ease 0s)
+.authorisation__popup-list
+    list-style: none
+    padding-left: 0
+    margin-left: -15px
+    margin-right: -15px
+.authorisation__popup-link-selection
+    display: block
+    padding: 10px 20px
+    text-decoration: underline
+    font-size: 15px
+    color: #9d9d9d
+    +transition(all 0.5s ease 0s)
+    &:hover, &:active, &:focus
+        background: #eeeeee
+        color: #9d9d9d
+    &:visited
+        &:hover, &:active, &:focus
+            background: #eeeeee
+            color: #9d9d9d
+.authorisation__popup-link-exit
+    font-size: 11px
+    text-decoration: underline
+    +transition(all 0.5s ease 0s)
+    &:hover, &:active, &:focus
+        color: #fd2f08
+    &:visited
+        &:hover, &:active, &:focus
+            color: #fd2f08
+
 
 .service
-    padding: 5px 0
+    min-height: 52px
 .service__list
     display: inline-block
-    padding: 5px 0
+    min-height: 52px
     margin-bottom: 0
     list-style: none
+    font-size: 0
 .service__item
     display: inline-block
     vertical-align: middle
-    margin-right: 40px
+    font-size: 14px
     &:last-child
         margin-right: 0
+        .service__link
+            padding-right: 5px
 .service__link
-    display: block
+    display: flex
+    height: 52px
+    padding: 10px 20px
+    align-items: center
     text-decoration: underline
     color: #fff
+    +transition(all 0.5s ease 0s)
+    &:hover, &:active, &:focus
+        background: #37389f
+        color: #fff
+    &:visited
+        &:hover, &:active, &:focus
+            background: #37389f
+            color: #fff
+
 
 .search
+    display: flex
+    width: 100%
+    min-height: 52px
+    align-items: center
+.search__form
     width: 100%
 .search__input
     width: 100%
     height: 34px
-    padding: 0 30px 0 10px
+    padding: 0 35px 0 10px
     background: none
     border: none
     outline: none
+    color: #fff
+    &::-webkit-input-placeholder
+        color: #fff
+    &::-moz-placeholder
+        color: #fff
+    &:-moz-placeholder
+        color: #fff
+    &:-ms-input-placeholder
+        color: #fff
 .search__entry-field
     border: 2px solid #fff
     -webkit-border-radius: 10px
@@ -69,25 +151,40 @@
 .search__btn
     width: 25px
     height: 25px
+    padding: 0
+    background: none
+    border: none
     position: absolute
     top: 50%
-    right: 10px
+    right: 5px
     transform: translateY(-50%)
     outline: none
+    &:hover, &:focus
+        background: none
+        border: none
+
 
 .page-header__info
     padding: 20px 0
 
+
 .logo
     padding: 10px 0
+    align-items: center
     &.footer
         margin-bottom: 55px
-
 .logo__link
     display: block
-    width: 310px
-    height: 50px
-    background: #9d9d9d
+    width: 335px
+    position: relative
+.logo__link-text
+    display: block
+    font-size: 16px
+    position: absolute
+    margin-top: -5px
+    right: 0
+    color: #fff
+
 
 .info-box
     padding: 10px 0
@@ -96,7 +193,8 @@
 .info-box__text
     display: inline-block
     vertical-align: middle
-    width: calc(100% - 60px)
+    width: calc(100% - 64px)
+
 
 .call
     &.header
@@ -107,17 +205,33 @@
             padding-left: 5px
             padding-right: 5px
         .call__link
+            position: relative
             color: #326cb5
+            +transition(all 0.5s ease 0s)
+            &:hover, &:active, &:focus
+                color: #fd2f08
+                text-decoration: none
+            &:visited
+                &:hover, &:active, &:focus
+                    color: #fd2f08
+                    text-decoration: none
     &.footer
         font-size: 0
         .call__toggle
             display: inline-block
         .call__link-wrap
             display: inline-block
-            width: calc(100% - 70px)
+            width: calc(100% - 74px)
         .call__link
             font-size: 28px
-
+            +transition(all 0.5s ease 0s)
+            &:hover, &:active, &:focus
+                color: #ff9900
+                text-decoration: none
+            &:visited
+                &:hover, &:active, &:focus
+                    color: #ff9900
+                    text-decoration: none
 .call__link-wrap
     height: 50px
 .call__toggle
@@ -132,56 +246,222 @@
 .call__toggle-text
     display: inline-block
     vertical-align: middle
-    width: calc(100% - 60px)
+    width: calc(100% - 64px)
     font-size: 14px
     color: #fd2f08
+
 
 .banners-top
     padding: 10px 0
     border-bottom: 1px solid #aaaaaa
-
 .banners-top__row
     margin-left: -5px
     margin-right: -5px
     > div
         padding-left: 5px
         padding-right: 5px
-
 .banners-top__img
     width: 100%
     height: 100%
     background: #9d9d9d
-
 .banners-top__left
     .banners-top__img
         padding-top: 48%
-
 .banners-top__right
     .banners-top__img
         padding-top: 97.5%
+
+
+.sorting
+    padding: 25px 0 10px 0
+.sorting__list
+    margin-bottom: 0
+.sorting__item
+    display: inline-block
+    margin-right: 25px
+    &:last-child
+        margin-right: 0
+.sorting__link
+    display: inline-block
+    font-size: 15px
+    text-transform: uppercase
+    color: #326cb5
+    +transition(all 0.5s ease 0s)
+    &:hover, &:active, &:focus
+        text-decoration: none
+        color: #fd2f08
+        .icon-arrow-down
+            +sprite(arrow-down-orange)
+    &:visited
+        &:hover, &:active, &:focus
+            text-decoration: none
+            color: #fd2f08
+
+
+.catalog-nav
+    margin-bottom: 35px
+.catalog-nav__header
+    padding: 12px 10px
+    background: #326cb5
+    text-transform: uppercase
+    font-size: 15px
+    color: #fff
+.catalog-nav__list
+    list-style: none
+    padding-left: 0
+    margin-bottom: 0
+.catalog-nav__item
+    position: relative
+    font-size: 0
+    &.fst-lvl
+        border: 1px solid #ababab
+        border-top: none
+        font-size: 0
+    &.snd-lvl
+        border-left: none
+        border-right: none
+.catalog-nav__link-wrap
+    position: relative
+    +transition(all 0.5s ease 0s)
+    &:hover, &:focus
+        > .catalog-nav__link
+            background: #eeeeee
+            color: #326cb5
+            &:visited
+                background: #eeeeee
+                color: #326cb5
+        .icon-gadget
+            +sprite(gadget-blue)
+        .icon-clock
+            +sprite(clock-blue)
+        .icon-cream
+            +sprite(cream-blue)
+        .icon-sport
+            +sprite(sport-blue)
+        .icon-mouse
+            +sprite(mouse-blue)
+        .icon-wheel
+            +sprite(wheel-blue)
+        .icon-purse
+            +sprite(purse-blue)
+        .icon-toy
+            +sprite(toy-blue)
+        .icon-headphones
+            +sprite(headphones-blue)
+        .icon-lamp
+            +sprite(lamp-blue)
+        .icon-instruments
+            +sprite(instruments-blue)
+        .icon-gift-gray
+            +sprite(gift-blue)
+        .icon-bed
+            +sprite(bed-blue)
+        .icon-cigarette
+            +sprite(cigarette-blue)
+        .icon-glasses
+            +sprite(glasses-blue)
+.catalog-nav__link
+    display: block
+    width: 100%
+    padding: 10px 10px 10px 45px
+    position: relative
+    font-size: 15px
+    color: #000
+    +transition(all 0.5s ease 0s)
+    &:hover, &:active, &:focus
+        background: #eeeeee
+        text-decoration: none
+        color: #326cb5
+    &:visited
+        &:hover, &:active, &:focus
+            background: #eeeeee
+            text-decoration: none
+            color: #326cb5
+    &.snd-lvl:before
+        content: ""
+        display: block
+        width: 9px
+        height: 9px
+        border-top: 2px solid #aaaaaa
+        border-right: 2px solid #aaaaaa
+        position: absolute
+        top: 53%
+        left: 15px
+        transform: translateY(-50%) rotate(45deg)
+        +transition(all 0.5s ease 0s)
+    &.snd-lvl
+        &:hover, &:active, &:focus
+            &:before
+                border-color: #326cb5
+.catalog-nav__icon
+    display: block
+    width: 45px
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+.catalog-nav__toggle
+    display: block
+    vertical-align: top
+    width: 45px
+    height: 45px
+    position: absolute
+    top: 0
+    right: 0
+    cursor: pointer
+
+
+.pay-soc-wrap
+    padding: 10px 25px
+
 
 .payments
     list-style: none
     padding-left: 0
     margin-bottom: 50px
+    text-align: center
     font-size: 0
 .payments__item
     display: inline-block
-    margin-right: 10px
+    margin-right: 7px
     &:last-child
         margin-right: 0
 .payments__link
     display: block
-    width: 45px
+    width: 46px
     height: 30px
-    background: #9d9d9d
+
 
 .subscription
     display: inline-block
+    padding: 10px 0
+    margin-bottom: 15px
+    max-width: 340px
     text-align: left
+.subscription__form
+    margin-bottom: 20px
+    font-size: 0
+.subscription__inner
+    display: inline-block
+    font-size: 14px
+    &.left
+        width: 60%
+        padding-right: 5px
+    &.right
+        width: 40%
+    > input, button
+        width: 100%
 .subscription__link
     text-decoration: underline
+    font-size: 16px
     color: #fff
+    +transition(all 0.5s ease 0s)
+    &:hover, &:active, &:focus
+        color: #ff9900
+    &:visited
+        &:hover, &:active, &:focus
+            color: #ff9900
+
 
 .counter
     display: inline-block

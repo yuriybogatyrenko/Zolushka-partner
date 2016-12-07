@@ -20,5 +20,32 @@
                 </div>
             </div>
         </section>
+        <section class="sorting text-right">
+            <div class="container">
+                <ul class="sorting__list">
+                    <li class="sorting__item">
+                        <a class="sorting__link" href="#"><span class="va-m td-u">Новинки</span> <i class="icon icon-arrow-down"></i></a>
+                    </li>
+                    <li class="sorting__item">
+                        <a class="sorting__link" href="#"><span class="va-m td-u">Популярное</span> <i class="icon icon-arrow-down"></i></a>
+                    </li>
+                    <li class="sorting__item">
+                        <a class="sorting__link" href="#"><span class="va-m td-u">Лидеры продаж</span> <i class="icon icon-arrow-down"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        {% include "layouts/sidebar.twig" %}
+                    </div>
+                    <div class="col-md-9">
+                        <div class="catalog-showcase"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 {% endblock %}

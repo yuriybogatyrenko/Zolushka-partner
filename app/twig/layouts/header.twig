@@ -61,17 +61,73 @@
                             <div class="authorisation__inner">
                                 <a class="authorisation__link" href="#">Регистрация</a>
                             </div>
+                            <div class="dropdown authorisation__inner hidden">
+                                <a href="#" class="dropdown-toggle authorisation__link" data-toggle="dropdown">
+                                    <span>Здравствуйте, Пользователь</span><b class="caret"></b>
+                                </a>
+                                <div class="dropdown-menu authorisation__popup">
+                                    <ul class="authorisation__popup-list">
+                                        <li class="authorisation__popup-item">
+                                            <a class="authorisation__popup-link-selection" href="#">Мои заказы</a>
+                                        </li>
+                                        <li class="authorisation__popup-item">
+                                            <a class="authorisation__popup-link-selection" href="#">Мои желания</a>
+                                        </li>
+                                        <li class="authorisation__popup-item">
+                                            <a class="authorisation__popup-link-selection" href="#">Настройки</a>
+                                        </li>
+                                    </ul>
+                                    <div class="text-right">
+                                        <a class="authorisation__popup-link-exit" href="#">Выход</a>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="dropdown authorisation__inner">
                                 <a href="#" class="dropdown-toggle authorisation__link" data-toggle="dropdown">
-                                    <i class="icon icon-man mr-10"></i><span>Войти в кабинет</span><b class="caret"></b>
+                                    <i class="icon icon-person mr-10"></i><span>Войти в кабинет</span><b class="caret"></b>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Действие</a></li>
-                                    <li><a href="#">Другое действие</a></li>
-                                    <li><a href="#">Что-то еще</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Отдельная ссылка</a></li>
-                                </ul>
+                                <div class="dropdown-menu authorisation__popup">
+                                    <p class="fs-12">С помощью социальной сети:</p>
+                                    <div>
+                                    <ul class="soc mb-15">
+                                        <li class="soc__item">
+                                            <a class="soc__link" href="#">
+                                                <i class="icon icon-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="soc__item">
+                                            <a class="soc__link"  href="#">
+                                                <i class="icon icon-vk"></i>
+                                            </a>
+                                        </li>
+                                        <li class="soc__item">
+                                            <a class="soc__link"  href="#">
+                                                <i class="icon icon-classmates"></i>
+                                            </a>
+                                        </li>
+                                        <li class="soc__item">
+                                            <a class="soc__link"  href="#">
+                                                <i class="icon icon-mail-ru"></i>
+                                            </a>
+                                        </li>
+                                        <li class="soc__item">
+                                            <a class="soc__link"  href="#">
+                                                <i class="icon icon-f"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <p class="fs-12">Или пройдите простую регистрацию на нашем сайте:</p>
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="text" class="input input-default mb-10" title="login" placeholder="Логин">
+                                            <input type="password" class="input input-default" title="login" placeholder="Пароль">
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-default btn-sm">Зарегистрироваться</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -84,8 +140,8 @@
             <div  class="row">
                 <div class="col-md-4 bdr-r-a-gray">
                     <div class="logo">
-                        <a class="logo__link">
-                            <img class="img-responsive" src="" alt="" title="kupitrend.kz">
+                        <a class="logo__link" href="#">
+                            <img class="img-responsive" src="images/logo-color.png" alt="" title="kupitrend.kz">
                         </a>
                     </div>
                 </div>
@@ -93,13 +149,13 @@
                     <div class="row info-box">
                         <div class="col-md-6 fs-0">
                             <div class="info-box__item">
-                                <span class="circle big blue va-m-b mr-10"><i class="icon icon-box"></i></span>
+                                <i class="icon icon-box mr-10"></i>
                                 <span class="info-box__text fs-11 c-blue">Товары в наличии на складе РК</span>
                             </div>
                         </div>
                         <div class="col-md-6 fs-0">
                             <div class="info-box__item">
-                                <div class="circle big blue va-m-b mr-10"><i class="icon icon-auto"></i></div>
+                                <i class="icon icon-auto mr-10"></i>
                                 <span class="info-box__text fs-11 c-blue">Доставка по РК за 5 дней</span>
                             </div>
                         </div>
@@ -114,8 +170,7 @@
                         </div>
                         <div class="col-md-5 fs-0">
                             <a class="call__toggle">
-                                <div class="circle big orange va-m-b mr-10"><i class="icon icon-tel"></i></div>
-                                <span class="call__toggle-text">Перезвонить мне</span>
+                                <i class="icon icon-tel-orange mr-10"></i><span class="call__toggle-text">Перезвонить мне</span>
                             </a>
                         </div>
 
@@ -134,7 +189,7 @@
                             <div class="search__entry-field">
                                 <input type="text" class="search__input" placeholder="поиск в каталоге">
                                 <button type="submit" class="search__btn">
-                                    <i class="icon icon-magnifier"></i>
+                                    <i class="icon icon-loupe"></i>
                                 </button>
                             </div>
                         </form>
@@ -142,9 +197,9 @@
                 </div>
 
                 <div class="col-md-8 text-right">
-                    <ul class="service__list va-m-b">
+                    <ul class="service__list">
                         <li class="service__item">
-                            <a class="service__link" href="#"><span>Акции</span><i class="icon icon-gift ml-10"></i>
+                            <a class="service__link" href="#"><span>Акции</span><i class="icon icon-gift-white ml-10"></i>
                             </a>
                         </li>
                         <li class="service__item">
