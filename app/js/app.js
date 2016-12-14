@@ -44,8 +44,7 @@ var Partners = function () {
                 && !$target.hasClass(options.currentClass)
                 && !$target.closest('.'+options.listingClass).length > 0
             ) {
-                options.elements.find('.'+options.listingClass).hide();
-                console.log('hi')
+                options.elements.find('.'+options.listingClass).hide();)
             }
         });
     };
