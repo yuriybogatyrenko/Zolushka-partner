@@ -17,20 +17,24 @@ var Partners = function () {
             dropdown.listing = dropdown.element.find('.'+options.listingClass);
             dropdown.current = dropdown.element.find('.'+options.currentClass);
 
-            dropdown.element.find('.'+options.currentClass).on('click', function () {
+            // toggle action bind
+            dropdown.current.on('click', function () {
                 dropdown.toggle();
             });
 
+            // toggle dropdown
             dropdown.toggle = function () {
                 dropdown.listing.toggle();
                 dropdown.current.toggleClass('active');
             };
 
+            // open dropdown
             dropdown.open = function () {
                 dropdown.listing.show();
                 dropdown.current.addClass('active');
             };
 
+            // closing dropdown
             dropdown.close = function () {
                 dropdown.listing.hide();
                 dropdown.current.removeClass('active');
@@ -44,7 +48,7 @@ var Partners = function () {
                 && !$target.hasClass(options.currentClass)
                 && !$target.closest('.'+options.listingClass).length > 0
             ) {
-                options.elements.find('.'+options.listingClass).hide();)
+                options.elements.find('.'+options.listingClass).hide();
             }
         });
     };
