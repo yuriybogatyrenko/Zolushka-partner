@@ -26,7 +26,5 @@
     "useref": "^1.2.0",
     "wiredep": "^4.0.0"
   },
-  "dependencies": {
-    "bootstrap-sass": "^3.3.7"
-  }
+  "dependencies": {}
 }

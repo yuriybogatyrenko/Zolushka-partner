@@ -140,19 +140,3 @@
     var app = new YOURAPPNAME(document);
 
 })();
-
-$(document).ready(function () {
-
-    $(".slider-range").each(function () {
-        var slider = $(this);
-        slider.slider();
-        slider.on("slide", function (slideEvt) {
-            $('#slider-range-start-price').val(slideEvt.value[0]);
-            $('#slider-range-finish-price').val(slideEvt.value[1]);
-        });
-        setTimeout(function () {
-            $('#slider-range-start-price').val(slider.data('slider').value[0]);
-            $('#slider-range-finish-price').val(slider.data('slider').value[1]);
-        }, 500);
-    });
-});
