@@ -3,5 +3,102 @@
 {% block pageTitle %}Главная страница{% endblock %}
 
 {% block content %}
+	<div class="main-screen">
+		<div class="container">
+			<h1>Партнерская программа <br>Золушка project</h1>
+			<div class="main-screen__grid">
+				<div class="main-screen__item">
+					<p class="main-screen__big-text">до 92 Р</p>
+					<p class="main-screen__small-text">за регистрацию</p>
+				</div>
+				<div class="main-screen__item">
+					<p class="main-screen__big-text">до 70%</p>
+					<p class="main-screen__small-text">с прибыли</p>
+				</div>
+				<div class="main-screen__item">
+					<p class="main-screen__big-text">до 50%</p>
+					<p class="main-screen__small-text">с рефералов</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="video">
+		<img alt="" src="http://placehold.it/500x300"/>
+	</div>
+	<div class="in-numbers">
+		<div class="block-title">Золушка Project в цифрах</div>
+		<div class="in-numbers__grid">
+			<div class="in-numbers__item display-flex space-between">
+				<div class="in-numbers__purple-text dib">
+					5%
+				</div>
+				<div class="in-number__conversion-text dib">
+					конверсия в регистрацию
+				</div>
+			</div>
+			<div class="in-numbers__item display-flex space-between">
+				<div class="in-numbers__buy-converstion dib">
+					<i class="icon-cart"></i>
+					<div class="dib">8%</div>
+				</div>
+				<div class="in-number__conversion-text dib">
+					конверсия в покупку платных услуг
+				</div>
+			</div>
+		</div>
+		<div class="in-numbers__bottom-grid display-flex space-around">
+			<div class="in-numbers__bottom-item">
+				<div class="in-numbers__bottom-purple-text dib -purple-color">
+					18
+				</div>
+				<div class="in-numbers__bottom-text -grey-text">
+					часов время принятие <br>решение о покупке
+				</div>
+			</div>
+			<div class="in-numbers__bottom-item">
+				<div class="in-numbers__bottom-purple-text dib -purple-color">
+					30
+				</div>
+				<div class="in-numbers__bottom-text -grey-text">
+					дней время <br>
+					жизни Coockie
+				</div>
+			</div>
+			<div class="in-numbers__bottom-item">
+				<div class="in-numbers__bottom-purple-text dib -purple-color">
+					10
+				</div>
+				<div class="in-numbers__bottom-text -grey-text">
+					дней <br>
+					холд
+				</div>
+			</div>
+		</div>
+		<div class="graph-description mb30">
+			Cервис «Золушка Project» создан для тех, кто ищет отношения по расчету. <br>
+			Гарантированная конфиденциальность, телефонная связь без раскрытия номера,мобильное приложение Denim,
+			подтверждение анкет и многое другое.
+			<br>
+			Мы делаем отношения по расчету выгодными!
+		</div>
+		<div class="-text-center">
+			<a href="#" class="button">Присоединиться</a>
+		</div>
+	</div>
+	<div class="count-profit">
+		<div class="container">
+			<div class="count-profit__title -text-uppercase -white-text">Расчитайте свою прибль</div>
 
+			<div class="display-flex">
+				<div class="count-profit__big-item">
+					<input type="text" data-bind="value: trafficCount, valueUpdate: 'keyup'">
+					<strong data-bind="text: regProfit"></strong>
+					<br>
+					<strong data-bind="text: paysProfit"></strong>
+					<br>
+					<strong data-bind="text: summaryProfit"></strong>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

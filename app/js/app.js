@@ -2,6 +2,39 @@ var Partners = function () {
     var self = this;
     var $doc = $(document);
 
+    this.trafficCount = ko.observable();
+    
+    //reg profit
+    this.regProfit = ko.computed(function () {
+        if(this.trafficCount() > 0) {
+            var profit = this.trafficCount() * 0.05;
+            return profit.toFixed(2);
+        } else
+            return "--";
+    }, this);
+
+    //pays profit
+    this.paysProfit = ko.computed(function () {
+        if(this.trafficCount() > 0) {
+            var profit = this.regProfit() * 0.07;
+            return profit.toFixed(2);
+        } else {
+            return "--";
+        }
+    }, this);
+
+    //summary profit
+    this.summaryProfit = ko.computed(function () {
+        if(this.trafficCount() > 0) {
+            var total_profit = parseFloat(this.paysProfit()) + parseFloat(this.regProfit());
+            return total_profit.toFixed(2);
+        } else {
+            return "--";
+        }
+    }, this);
+
+    //dropdown declaration
+
     self.dropdown = function(className) {
         var options = {};
 
@@ -53,8 +86,10 @@ var Partners = function () {
         });
     };
 
-
+    // dropdown init
     self.dropdown('.dropdown-wrapper');
+
+    // count profit form
 
 };
 
