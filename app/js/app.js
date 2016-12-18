@@ -89,8 +89,6 @@ var Partners = function () {
     // dropdown init
     self.dropdown('.dropdown-wrapper');
 
-    // count profit form
-
 };
 
 ko.applyBindings(new Partners());

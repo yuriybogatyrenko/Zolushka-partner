@@ -3,3 +3,18 @@ html, body
   height: 100%
   font-size: 14px
 
+.real-statistic
+  position: relative
+
+  &:before
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    +retina-bg('macbook-statistic.png', 'macbook-statistic@2x.png')
+    content: ''
+    width: 634px
+    height: 442px
+
+.in-numbers
+  +retina-bg("digits-background.png", "digits-background@2x.png")
