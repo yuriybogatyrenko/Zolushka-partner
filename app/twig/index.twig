@@ -258,6 +258,105 @@
                     </span>
                     <i class="icon-full-screen"></i>
                 </div>
+                <i class="icon-users"></i>
+                <div class="refferal-arrow-orange">
+                    <span class="dib">
+                        Веб-мастера генерируют <br>трафик конвертируемый в <br>покупки платных сервисов
+                    </span>
+                    <i class="icon-line-chart"></i>
+                </div>
+                <i class="icon-broken-heart"></i>
+            </div>
+            <div class="big-arrow -text-center">
+                <span class="dib">$ ВАША ПРИБЫЛЬ</span>
+                <span class="dib">
+                    30-70 % с покупок совершенных через вашего партнера <br>
+                    До 100% с первого пополнения через вашего партнера
+                </span>
+            </div>
+            <div class="display-flex">
+                <div class="referal__table-wrapper">
+                    <div class="refferal__table table">
+                        <div class="tr">
+                            <div class="td table-header">
+                                Кол-во рефералов
+                            </div>
+                            <div class="td table-header">
+                                % партнерского вознаграждения с платных сервисов
+                            </div>
+                        </div>
+                        <div class="tr">
+                            <div class="td">
+                                1-5
+                            </div>
+                            <div class="td">
+                                5% от суммы покупки пользователя
+                            </div>
+                        </div>
+                        <div class="tr">
+                            <div class="td">
+                                5 - 15
+                            </div>
+                            <div class="td">
+                                10% от суммы покупки пользователя
+                            </div>
+                        </div>
+                        <div class="tr">
+                            <div class="td">
+                                > 15
+                            </div>
+                            <div class="td">
+                                15% от суммы покупки пользователя
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-note">
+                    Активным реффералом считается вебмастер получивший не менее 10 оплаченных регистраций
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offer">
+        <div class="container">
+            <div class="offer-title">Оффер для партнеров <br>с Адалт трафиком</div>
+            <div class="offer-link">
+                <span class="dib">Перейти</span> <i class="icon-arrow-right"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="rating">
+        <div class="container">
+            <div class="rating__title">Рейтинг веб-мастеров партнерской программы сайта знакомств Золушка project</div>
+            <div class="rating__subtitle">Любой веб-мастер может убрать свое присутствие в рейтинге отметив соответствующую галочку в личном кабинете</div>
+
+            <div class="rating-table table">
+                <div class="tr">
+                    <div class="td">№</div>
+                    <div class="td ffb">Веб-мастер</div>
+                    <div class="td ffb">Трафик</div>
+                    <div class="td ffb">Регистрации</div>
+                    <div class="td ffb">Подтвержденные регистрации</div>
+                    <div class="td ffb">Доход с трафика</div>
+                    <div class="td ffb">Доход c покупок</div>
+                    <div class="td ffb">Реферальный доход</div>
+                </div>
+                <div class="table-group" data-bind="foreach: webmasters_table">
+                    <div class="tr">
+                        <div class="td" data-bind="text: webmaster().number"></div>
+                        <div class="td">
+                            <img src="" alt="" data-bind="attr: {src: webmaster().ava}">
+                        </div>
+                        <div class="td" data-bind="text: webmaster().name"></div>
+                        <div class="td" data-bind="text: webmaster().traffic"></div>
+                        <div class="td" data-bind="text: webmaster().regs"></div>
+                        <div class="td" data-bind="text: webmaster().confs"></div>
+                        <div class="td" data-bind="text: webmaster().regs_income"></div>
+                        <div class="td" data-bind="text: webmaster().ref_income"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

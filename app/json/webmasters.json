@@ -1,0 +1,70 @@
+{
+  "response": [
+    {
+      "number": "1",
+      "ava": "http://placehold.it/20x20",
+      "name": "John",
+      "traffic": 100,
+      "regs": 200,
+      "confs": 20,
+      "regs_income": 50,
+      "buys_income": 200,
+      "ref_income": 500
+    },
+    {
+      "number": "2",
+      "ava": "http://placehold.it/20x20",
+      "name": "Peter",
+      "traffic": 100,
+      "regs": 200,
+      "confs": 20,
+      "regs_income": 50,
+      "buys_income": 200,
+      "ref_income": 500
+    },
+    {
+      "number": "3",
+      "ava": "http://placehold.it/20x20",
+      "name": "Peter",
+      "traffic": 100,
+      "regs": 200,
+      "confs": 20,
+      "regs_income": 50,
+      "buys_income": 200,
+      "ref_income": 500
+    },
+    {
+      "number": "4",
+      "ava": "http://placehold.it/20x20",
+      "name": "Peter",
+      "traffic": 100,
+      "regs": 200,
+      "confs": 20,
+      "regs_income": 50,
+      "buys_income": 200,
+      "ref_income": 500
+    },
+    {
+      "number": "5",
+      "ava": "http://placehold.it/20x20",
+      "name": "Peter",
+      "traffic": 100,
+      "regs": 200,
+      "confs": 20,
+      "regs_income": 50,
+      "buys_income": 200,
+      "ref_income": 500
+    },
+    {
+      "number": "6",
+      "ava": "http://placehold.it/20x20",
+      "name": "Peter",
+      "traffic": 100,
+      "regs": 200,
+      "confs": 20,
+      "regs_income": 50,
+      "buys_income": 200,
+      "ref_income": 500
+    }
+  ]
+}
