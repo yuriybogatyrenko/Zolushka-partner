@@ -530,6 +530,10 @@
   font-size: 77px;
 }
 
+.lh1 {
+  line-height: 1;
+}
+
 html, body {
   margin: 0;
   height: 100%;
