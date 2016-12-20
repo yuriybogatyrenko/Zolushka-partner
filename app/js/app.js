@@ -111,6 +111,18 @@ var Partners = function () {
     };
 
     self.webmasters();
+
+    self.checkbox = function () {
+        $('input:checkbox').each(function () {
+            var $this = $(this);
+            if($this.hasClass('no-style'))
+                return;
+            $this.wrap('<span class="jq_checkbox"></span>');
+            $this.after('<span class="jq_checkbox__detector"></span>');
+        });
+    };
+
+    self.checkbox();
 };
 
 ko.applyBindings(new Partners());

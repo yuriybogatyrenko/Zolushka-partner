@@ -1,5 +1,7 @@
 {% extends "layouts/app.twig" %}
 
+{% set roub = '<span class="icon-roub">₽</span>' %}
+
 {% block pageTitle %}Главная страница{% endblock %}
 
 {% block content %}
@@ -9,54 +11,54 @@
 	</div>
 	<div class="in-numbers">
 		<div class="block-title -text-center mb30">Золушка Project в цифрах</div>
-		<div class="in-numbers__grid fz0 lh0 -text-center">
+		<div class="in-numbers__grid fz0 lh0 -text-center mb70">
 			<div class="in-numbers__item dib grey-rectangle">
-				<div class="in-numbers__purple-text dib fz77 -purple-text">
+				<div class="in-numbers__purple-text dib fz77 -purple-text mr10">
 					5%
 				</div>
-				<div class="in-number__conversion-text fz30 dib -text-left lh1">
+				<div class="in-number__conversion-text fz30 dib -text-left lh1 ff-semibold">
 					конверсия <br>в регистрацию
 				</div>
 			</div>
 			<div class="in-numbers__item dib purple-rectangle">
-				<div class="in-numbers__buy-converstion dib">
-					<i class="icon-cart"></i>
+				<div class="in-numbers__buy-converstion dib mr10 ff-semibold">
+					<i class="icon-cart mr10"></i>
 					<div class="dib fz44 -white-text">8%</div>
 				</div>
-				<div class="in-number__buy-conversion-text dib fz20 -white-text">
-					конверсия в покупку платных услуг
+				<div class="in-number__buy-conversion-text dib fz20 -white-text -text-left lh1">
+					конверсия в покупку <br>платных услуг
 				</div>
 			</div>
 		</div>
 		<div class="in-numbers__bottom-grid display-flex space-around">
 			<div class="in-numbers__bottom-item">
-				<div class="in-numbers__bottom-purple-text dib -purple-color">
+				<div class="in-numbers__bottom-purple-text ff-semibold dib -purple-text">
 					18
 				</div>
-				<div class="in-numbers__bottom-text -grey-text">
+				<div class="in-numbers__bottom-text lh1 dib -grey-text">
 					часов время принятие <br>решение о покупке
 				</div>
 			</div>
 			<div class="in-numbers__bottom-item">
-				<div class="in-numbers__bottom-purple-text dib -purple-color">
+				<div class="in-numbers__bottom-purple-text ff-semibold dib -purple-text">
 					30
 				</div>
-				<div class="in-numbers__bottom-text -grey-text">
+				<div class="in-numbers__bottom-text lh1 dib -grey-text">
 					дней время <br>
 					жизни Coockie
 				</div>
 			</div>
 			<div class="in-numbers__bottom-item">
-				<div class="in-numbers__bottom-purple-text dib -purple-color">
+				<div class="in-numbers__bottom-purple-text ff-semibold dib -purple-text">
 					10
 				</div>
-				<div class="in-numbers__bottom-text -grey-text">
+				<div class="in-numbers__bottom-text lh1 dib -grey-text">
 					дней <br>
 					холд
 				</div>
 			</div>
 		</div>
-		<div class="graph-description mb30">
+		<div class="graph-description mb30 -text-center">
 			Cервис «Золушка Project» создан для тех, кто ищет отношения по расчету. <br>
 			Гарантированная конфиденциальность, телефонная связь без раскрытия номера,мобильное приложение Denim,
 			подтверждение анкет и многое другое.
@@ -67,26 +69,29 @@
 			<a href="#" class="button">Присоединиться</a>
 		</div>
 	</div>
-	<div class="count-profit">
+	<div class="count-profit -white-text">
 		<div class="container">
-			<div class="count-profit__title -text-uppercase -white-text">Расчитайте свою прибль</div>
+			<div class="count-profit__inner">
+				<div class="count-profit__title -text-uppercase -white-text mb40 -text-uppercase ff-semibold">Расчитайте свою прибль</div>
 
-			<div class="display-flex space-between">
-				<div class="count-profit__big-item">
-					<input type="text" data-bind="value: trafficCount, valueUpdate: 'keyup'">
-					<p>Суммарный доход: <span data-bind="text: summaryProfit"></span> Р/день</p>
-				</div>
-				<div class="count-profit__small-item">
-					<div class="count-profit__title">Доход с регистраций:</div>
-					<p class="count-profit__small-text">Текущий процент подтверждения регистраций: 59%</p>
-					<p class="count-profit__small-text">Средняя конверсия в регистрации: 5%</p>
-					<p><span data-bind="text: regProfit"></span> Р/день</p>
-				</div>
-				<div class="count-profit__small-item">
-					<div class="count-profit__title">Доход с платных сервисов:</div>
-					<p class="count-profit__small-text">Время принятия решения о покупке платной услуги: 18 часов</p>
-					<p class="count-profit__small-text">Конверсия в платежи: 7%</p>
-					<p><span data-bind="text: paysProfit"></span> Р/день</p>
+				<div class="display-flex space-between">
+					<div class="count-profit__big-item">
+						<input type="text" data-bind="value: trafficCount, valueUpdate: 'keyup'" placeholder="Укажите предполагаемый трафик, человек в день" class="db">
+						<p class="ff-semibold profit__bottom-count">Суммарный доход: <span data-bind="text: summaryProfit"></span> {{ roub }}/день</p>
+					</div>
+					<div class="count-profit__small-item">
+						<div class="count-profit__subtitle fz16 ff-semibold mb10">Доход с регистраций:</div>
+						<p class="count-profit__small-text fz12 mb10">Текущий процент подтверждения регистраций: 59%</p>
+						<p class="count-profit__small-text fz12">Средняя конверсия в регистрации: 5%</p>
+						<p class="profit__bottom-count ff-semibold"><span data-bind="text: regProfit"></span> {{ roub }}/день</p>
+					</div>
+					<div class="count-profit__small-item">
+						<div class="count-profit__subtitle fz16 ff-semibold mb10">Доход с платных сервисов:</div>
+						<p class="count-profit__small-text fz12 mb10">Время принятия решения о покупке платной услуги: 18
+							часов</p>
+						<p class="count-profit__small-text fz12">Конверсия в платежи: 7%</p>
+						<p class="ff-semibold profit__bottom-count"><span data-bind="text: paysProfit"></span> {{ roub }}/день</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -96,7 +101,7 @@
 		<div class="container">
 			<div class="clearfix">
 				<div class="real-statistic__left">
-					<div class="real-statistic__title">Статистика в режиме реальноо времени и отдельный личный кабинет
+					<div class="real-statistic__title block-title">Статистика в режиме <br>реального времени и <br>отдельный личный кабинет
 					</div>
 					<a href="#" class="button">Присоединиться</a>
 				</div>
@@ -363,19 +368,19 @@
 					</span>
 				</div>
 				<div class="paybacks__item">
-					<i class="icon-pc"></i>
+					<i class="icon-plastic"></i>
 					<span class="dib">
 						Платежные  <br>карты
 					</span>
 				</div>
 				<div class="paybacks__item">
-					<i class="icon-pc"></i>
+					<i class="icon-building"></i>
 					<span class="dib">
 						Банковский <br>перевод
 					</span>
 				</div>
 				<div class="paybacks__item">
-					<i class="icon-pc"></i>
+					<i class="icon-money"></i>
 					<span class="dib">
 						Наличный <br>перевод
 					</span>
@@ -472,7 +477,7 @@
 				</div>
 
 				<p class="policy-agreement">
-					<input type="checkbox"> Регистрируясь, вы подтверждаете, что ознакомились с правилами работы партнерской программы.
+					<input type="checkbox" checked> Регистрируясь, вы подтверждаете, что ознакомились с правилами работы партнерской программы.
 				</p>
 				<p class="partner-office">Партнерский отдел: <a href="mailto:partners@denim-app.ru" class="inherit">partners@denim-app.ru</a></p>
 			</form>

@@ -4,21 +4,10 @@ html, body
   font-size: 14px
   font-family: open_sansregular
 
-.real-statistic
-  position: relative
-
-  &:before
-    display: block
-    position: absolute
-    top: 0
-    right: 0
-    +retina-bg('macbook-statistic.png', 'macbook-statistic@2x.png')
-    content: ''
-    width: 634px
-    height: 442px
-
 .in-numbers
-  +retina-bg("digits-background.png", "digits-background@2x.png", cover)
+  +retina-bg("digits-background.png", "digits-background@2x.png")
+  background-position: center -180px
+  background-color: #ecf9e9
 
 .header-wrapper
   +retina-bg('header-bg.jpg', 'header-bg.jpg', cover)
@@ -120,6 +109,8 @@ html, body
   font-size: 0
   line-height: 0
   border-radius: 5px
+  box-shadow: 0 2px 54px 0 rgba(0, 0, 0, 0.25)
+  margin-bottom: 50px
 
   img
     width: 100%
@@ -164,6 +155,82 @@ html, body
       position: absolute
       display: block
       content: ''
-      top: 0
+      top: 50%
+      margin-top: -51px
       left: 0
       +sprite(grey-rectangle)
+
+  &.purple-rectangle
+    &:before
+      position: absolute
+      top: 50%
+      margin-top: -51px
+      left: 0
+      display: block
+      content: ''
+      +sprite(purple-rectangle)
+
+.in-numbers__bottom-text
+  font-size: 18px
+
+.in-numbers__bottom-purple-text
+  font-size: 42px
+  margin-right: 5px
+
+.in-numbers__bottom-grid
+  margin-bottom: 280px
+
+.graph-description
+  display: block
+  margin-left: auto
+  margin-right: auto
+  max-width: 650px
+
+.count-profit
+  padding: 40px 0
+  background: #ecf9e9
+
+  &__inner
+    background-image: linear-gradient(100deg, #0b007a, #ca17e7)
+    background-image: -webkit-linear-gradient(100deg, #0b007a, #ca17e7)
+    background-image: -moz-linear-gradient(100deg, #0b007a, #ca17e7)
+    background-image: -ms-linear-gradient(100deg, #0b007a, #ca17e7)
+    background-image: -o-linear-gradient(100deg, #0b007a, #ca17e7)
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.4)
+    border-radius: 10px
+    padding: 44px 66px 66px
+
+.count-profit__big-item
+  width: 40%
+
+.count-profit__small-item
+  width: 25%
+
+.count-profit__big-item, .count-profit__small-item
+  position: relative
+  padding-bottom: 60px
+
+  .profit__bottom-count
+    position: absolute
+    left: 0
+    bottom: 0
+
+.real-statistic__title
+  line-height: 1.5
+  margin-bottom: 85px
+
+
+.real-statistic
+  position: relative
+  padding: 160px 0
+
+  &:before
+    display: block
+    position: absolute
+    top: 50%
+    right: 0
+    margin-top: -221px
+    +retina-bg('macbook-statistic.png', 'macbook-statistic@2x.png')
+    content: ''
+    width: 634px
+    height: 442px
