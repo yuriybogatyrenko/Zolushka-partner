@@ -5,6 +5,8 @@
 
     @if $contain == true and $contain != 'autosize'
         background-size: contain
+    @else if $contain == 'cover'
+        background-size: cover
     @else if $contain == 'autosize'
         background-size: (image-width($retina) / 2) (image-height($retina) / 2)
         width: image-width($retina) / 2

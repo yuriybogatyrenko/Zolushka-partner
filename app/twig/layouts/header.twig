@@ -1,57 +1,82 @@
-<header class="header display-flex">
-	<div class="flex-item"><a href="#" class="logo"></a></div>
-	<div class="flex-item">
-		<nav class="header-menu">
-			<ul class="header-menu__listing">
-				<li class="header-menu__item active">
-					<a href="#" class="header-menu__link">Партнерская программа</a>
-				</li>
-				<li class="header-menu__item">
-					<a href="#" class="header-menu__link">Адалт проектам</a>
-				</li>
-			</ul>
-		</nav>
-	</div>
-	<div class="flex-item">
-		<div class="header-right">
-			<div class="header-right-nav">
-				<a class="header-right-nav__link" href="#">Рекламные материалы</a>
-				<a class="header-right-nav__link" href="#">Правила</a>
+<div class="header-wrapper">
+	<header class="header">
+		<div class="container display-flex space-between flex-middle">
+			<div class="flex-item"><a href="#" class="logo"></a></div>
+			<div class="flex-item">
+				<nav class="header-menu">
+					<ul class="header-menu__listing fz18 clean-element">
+						<li class="header-menu__item active">
+							<a href="#" class="header-menu__link">Партнерская программа</a>
+						</li>
+						<li class="header-menu__item">
+							<a href="#" class="header-menu__link">Адалт проектам</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
-			<div class="header-right-activities">
-				<div class="dropdown-wrapper">
-					<div class="dropdown__current">
-						Вход
+			<div class="flex-item">
+				<div class="header-right">
+					<div class="header-right-nav dib fz14">
+						<a class="header-right-nav__link" href="#">Рекламные материалы</a>
+						<a class="header-right-nav__link" href="#">Правила</a>
 					</div>
-					<div class="dropdown__listing">
-						<div class="dropdown__item">
-							<a href="#" class="dropdown__link">Вход</a>
-						</div>
-						<div class="dropdown__item">
-							<a href="#" class="dropdown__link">Регистрация</a>
+					<div class="header-right-activities dib">
+						<div class="dropdown-wrapper activities-dropdown">
+							<div class="dropdown__current fz14">
+								Вход
+							</div>
+							<div class="dropdown__listing hidden">
+								<div class="dropdown__item">
+									<a href="#" class="dropdown__link">Вход</a>
+								</div>
+								<div class="dropdown__item">
+									<a href="#" class="dropdown__link">Регистрация</a>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="header-right-lang">
-				<div class="dropdown-wrapper">
-					<div class="dropdown__current">
-						<i class="icon-lang__rus"></i> <span class="header-right-lang__label dib vam">RU</span>
-					</div>
-					<div class="dropdown__listing">
-						<div class="dropdown__item">
-							<a href="#" class="dropdown__ling">
-								<i class="icon-lang__eng"></i> <span class="header-right-lang__label dib vam">RU</span>
-							</a>
-						</div>
-						<div class="dropdown__item">
-							<a href="#" class="dropdown__ling">
-								<i class="icon-lang__eng"></i> <span class="header-right-lang__label dib vam">RU</span>
-							</a>
+					<div class="header-right-lang dib">
+						<div class="dropdown-wrapper">
+							<div class="dropdown__current">
+								<i class="icon-lang__rus"></i> <span class="header-right-lang__label dib vam">RU</span>
+							</div>
+							<div class="dropdown__listing hidden">
+								<div class="dropdown__item">
+									<a href="#" class="dropdown__ling">
+										<i class="icon-lang__eng"></i> <span class="header-right-lang__label dib vam">RU</span>
+									</a>
+								</div>
+								<div class="dropdown__item">
+									<a href="#" class="dropdown__ling">
+										<i class="icon-lang__eng"></i> <span class="header-right-lang__label dib vam">RU</span>
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</header>
+
+	<div class="main-screen -text-center">
+		<div class="container">
+			<h1>Партнерская программа <br>Золушка project</h1>
+			<div class="mb70"></div>
+			<div class="main-screen__grid display-flex space-around">
+				<div class="main-screen__item">
+					<p class="main-screen__big-text">до 92 <span class="icon-roub">₽</span></p>
+					<p class="main-screen__small-text">за регистрацию</p>
+				</div>
+				<div class="main-screen__item">
+					<p class="main-screen__big-text">до 70%</p>
+					<p class="main-screen__small-text">с прибыли</p>
+				</div>
+				<div class="main-screen__item">
+					<p class="main-screen__big-text">до 50%</p>
+					<p class="main-screen__small-text">с рефералов</p>
+				</div>
+			</div>
+		</div>
 	</div>
-</header>
+</div>

@@ -2,6 +2,7 @@ html, body
   margin: 0
   height: 100%
   font-size: 14px
+  font-family: open_sansregular
 
 .real-statistic
   position: relative
@@ -17,4 +18,152 @@ html, body
     height: 442px
 
 .in-numbers
-  +retina-bg("digits-background.png", "digits-background@2x.png")
+  +retina-bg("digits-background.png", "digits-background@2x.png", cover)
+
+.header-wrapper
+  +retina-bg('header-bg.jpg', 'header-bg.jpg', cover)
+  padding-bottom: 200px
+
+.header
+  padding: 20px 0
+
+.logo
+  +retina-bg("logo.png", "logo@2x.png", autosize)
+
+.footer
+  background: #3c0756
+  padding: 40px 0
+
+.header-menu__item
+  font-family: open_sanssemibold
+  display: inline-block
+  vertical-align: middle
+
+  &:not(:last-child)
+    margin-right: 30px
+
+  &.active
+    border-bottom: 2px solid #fff
+    opacity: 0.5
+
+.header-menu__link
+  color: #fff
+  text-decoration: none
+
+.header-right-nav__link
+  color: #fff
+  text-decoration: none
+  &:not(:last-child)
+    margin-right: 15px
+
+.header-right-nav
+  margin-right: 15px
+
+.activities-dropdown
+  position: relative
+  
+  .dropdown__current
+    border-radius: 50px
+    background: #fff
+    line-height: 26px
+    color: #656565
+    position: relative
+    padding: 0 12px 0 12px
+
+    &:after
+      display: inline-block
+      vertical-align: middle
+      margin-left: 7px
+      content: ''
+      border: 5px solid transparent
+      border-top: 6px solid #656565
+      position: relative
+      top: 1px
+
+.dropdown__listing
+  position: absolute
+  top: 100%
+  left: 0
+  min-width: 100%
+
+.header-right-lang__label
+  font-family: open_sanssemibold
+  color: #fff
+  margin-left: 2px
+
+.activities-dropdown
+  margin-right: 5px
+
+.main-screen
+  h1
+    color: #fff
+    font-family: futurademicregular
+    font-size: 50px
+    line-height: 1.05
+    
+.main-screen__big-text
+  font-family: futurademicregular
+  color: #d9d3e0
+  font-size: 50px
+  line-height: 1
+
+.main-screen__small-text
+  color: #b8abc4
+  font-size: 20px
+  line-height: 1.5
+  font-family: open_sanssemibold
+
+.video
+  margin: -150px auto 0
+  width: 510px
+  border: 2px solid #fff
+  font-size: 0
+  line-height: 0
+  border-radius: 5px
+
+  img
+    width: 100%
+    border-radius: 3px
+
+  .icon-play-video
+    position: absolute
+    top: 50%
+    left: 50%
+    +transform(translate3d(-50%, 50%, 0))
+    cursor: pointer
+
+.block-title
+  font-size: 40px
+  color: #000
+  font-family: futurademicregular
+  
+  &.blue
+    color: #04bfa5
+
+  &.white
+    color: #fff
+
+.in-numbers__item
+  display: inline-block
+
+.in-numbers__purple-text
+  font-family: open_sanssemibold
+
+.in-number__conversion-text
+  color: #160280
+  font-family: open_sanssemibold
+
+.in-numbers__item
+  position: relative
+  padding: 0 35px
+  & > *
+    position: relative
+    z-index: 1
+  &.grey-rectangle
+    &:before
+      position: absolute
+      display: block
+      content: ''
+      top: 0
+      left: 0
+      +sprite(grey-rectangle)

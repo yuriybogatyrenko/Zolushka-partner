@@ -101,7 +101,7 @@ var Partners = function () {
     self.webmasters = function () {
         self.webmasters_table = ko.observableArray();
 
-        response = $.get('json/webmasters.json', function (data) {
+        $.get('json/webmasters.json', function (data) {
             i = 0;
             while(i < data.response.length) {
                 self.webmasters_table.push(new self.webmaster(data.response[i]));
