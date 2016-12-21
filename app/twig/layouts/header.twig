@@ -20,20 +20,33 @@
 						<a class="header-right-nav__link" href="#">Рекламные материалы</a>
 						<a class="header-right-nav__link" href="#">Правила</a>
 					</div>
-					<div class="header-right-activities dib">
-						<div class="dropdown-wrapper activities-dropdown">
-							<div class="dropdown__current fz14">
-								Вход
-							</div>
-							<div class="dropdown__listing hidden">
-								<div class="dropdown__item">
-									<a href="#" class="dropdown__link">Вход</a>
-								</div>
-								<div class="dropdown__item">
-									<a href="#" class="dropdown__link">Регистрация</a>
-								</div>
-							</div>
+					<div class="header-right-activities dib mr5">
+						<div class="login-trigger fz14">
+							Вход
 						</div>
+						<!-- START login-bar -->
+						<div class="login-bar">
+							<i class="close-popup"></i>
+							<form action="#">
+								<div class="login-bar__title fz16 ff-semibold mb20">Введите логин и пароль от своего аккаунта</div>
+								<div class="display-flex space-between mb20">
+									<div class="dib w38">
+										<input type="text" class="db" placeholder="E-mail">
+									</div>
+									<div class="dib w38">
+										<input type="text" class="db" placeholder="Пароль">
+									</div>
+									<div class="dib w20">
+										<button class="button purple db">Войти</button>
+									</div>
+								</div>
+								<div class="login-bar__bottom-links">
+									<a href="#" class="purple-link mr10 tdn">Напомнить пароль</a>
+									<a href="#" class="purple-link tdn">Регистрация</a>
+								</div>
+							</form>
+						</div>
+						<!-- // END login-bar -->
 					</div>
 					<div class="header-right-lang dib">
 						<div class="dropdown-wrapper">
