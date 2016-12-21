@@ -19,6 +19,9 @@
 .-grey-text
     color: #4a4a4a
 
+.-lightgrey-text
+    color: #a7a7a7
+
 .-white-text
     color: #fff
 
@@ -37,6 +40,9 @@
 
 .flex-middle
     align-items: center
+
+.flex-wrap
+    flex-wrap: wrap
 
 .mb10
     margin-bottom: 10px
@@ -65,11 +71,17 @@
 .mr10
     margin-right: 10px
 
+.mr30
+    margin-right: 30px
+
 .-text-center
     text-align: center
 
 .-text-left
     text-align: left
+
+.-text-right
+    text-align: right
 
 .-text-uppercase
     text-transform: uppercase
@@ -106,6 +118,9 @@
         background: -ms-linear-gradient(to top, #a149a9, #c732d4)
         background: -o-linear-gradient(to top, #a149a9, #c732d4)
 
+    &.db
+        width: 100%
+
 .hidden
     display: none
 
@@ -131,6 +146,12 @@
 .fz14
     font-size: 14px
 
+.fz15
+    font-size: 15px
+
+.fz16
+    font-size: 16px
+
 .fz18
     font-size: 18px
 
@@ -139,6 +160,9 @@
 
 .fz30
     font-size: 30px
+
+.fz33
+    font-size: 33px
 
 .fz44
     font-size: 44px
@@ -185,10 +209,16 @@
     border-radius: 3px
     display: block
     opacity: 0
-    background: #333
+    background: #e331b2
 
 .ff-semibold
     font-family: open_sanssemibold
+
+.ff-bold
+    font-family: open_sansbold
+
+.ff-futura
+    font-family: futurademicregular
 
 input
     &[type="text"], &[type="email"], &[type="password"]
@@ -205,3 +235,24 @@ input
             display: block
             width: 100%
             box-sizing: border-box
+
+.last-chilnd-no-mb
+    > *:last-child
+        margin-bottom: 0
+
+.w48
+    width: 48%
+
+.w32
+    width: 32%
+
+.purple-link
+    color: #ee3db4
+    text-decoration: underline
+
+    &:hover
+        text-decoration: none
+
+a.inherit
+    color: inherit
+    text-decoration: inherit
