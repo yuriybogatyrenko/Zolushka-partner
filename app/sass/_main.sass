@@ -522,6 +522,9 @@ html, body
   display: block
   z-index: 500
   text-align: center
+  overflow: auto
+  padding: 20px 0
+  box-sizing: border-box
 
   > .table
     height: 100%
@@ -531,8 +534,11 @@ html, body
 
 .popup
   background: #fff
-  display: inline-block
   border-radius: 5px
   padding: 40px
   width: 610px
   box-sizing: border-box
+  position: relative
+
+  &.rules-popup
+    width: 1000px
