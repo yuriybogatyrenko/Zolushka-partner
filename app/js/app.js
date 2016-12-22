@@ -1,3 +1,5 @@
+$doc = $(document);
+
 var Partners = function () {
     var self = this;
     var $doc = $(document);
@@ -35,10 +37,43 @@ var Partners = function () {
 
     // login bar
     self.loginBar = function (className) {
-        var loginBar = {};
+        var login = {};
 
+        login.trigger = $('.login-trigger');
+        login.bar = $('.login-bar');
 
+        login.closeBtn = $('[data-close-login-bar]')
+
+        login.open = function () {
+            login.bar.fadeIn(200);
+        };
+
+        login.close = function () {
+            login.bar.fadeOut(200);
+        };
+
+        login.closeBtn.bind('click', function () {
+            login.close();
+        });
+
+        login.trigger.bind('click', function () {
+            login.bar.fadeToggle(200);
+        });
+
+        $doc.click(function (e) {
+            var $el = $(e.target);
+            if(
+                !$el.closest('.login-bar').lenght > 0
+                && !$el.hasClass('.login-bar')
+                && !$el.hasClass('.login-trigger')
+                && !$el.closest('.login-trigger').lenght > 0
+            ) {
+
+            }
+        });
     };
+
+    self.loginBar();
 
     // table webmasters
     self.webmaster = function (webm) {
