@@ -1,13 +1,13 @@
 $doc = $(document);
 
-var Partners = function () {
+var PartnersView = function () {
     var self = this;
     var $doc = $(document);
 
-    this.trafficCount = ko.observable();
+    self.trafficCount = ko.observable();
     
     //reg profit
-    this.regProfit = ko.computed(function () {
+    self.regProfit = ko.computed(function () {
         if(this.trafficCount() > 0) {
             var profit = this.trafficCount() * 0.05;
             return profit.toFixed(2);
@@ -16,7 +16,7 @@ var Partners = function () {
     }, this);
 
     //pays profit
-    this.paysProfit = ko.computed(function () {
+    self.paysProfit = ko.computed(function () {
         if(this.trafficCount() > 0) {
             var profit = this.regProfit() * 0.07;
             return profit.toFixed(2);
@@ -26,7 +26,7 @@ var Partners = function () {
     }, this);
 
     //summary profit
-    this.summaryProfit = ko.computed(function () {
+    self.summaryProfit = ko.computed(function () {
         if(this.trafficCount() > 0) {
             var total_profit = parseFloat(this.paysProfit()) + parseFloat(this.regProfit());
             return total_profit.toFixed(2);
@@ -63,40 +63,17 @@ var Partners = function () {
         $doc.click(function (e) {
             var $el = $(e.target);
             if(
-                !$el.closest('.login-bar').lenght > 0
+                !$el.closest('.login-bar').length > 0
                 && !$el.hasClass('.login-bar')
                 && !$el.hasClass('.login-trigger')
-                && !$el.closest('.login-trigger').lenght > 0
+                && !$el.closest('.login-trigger').length > 0
             ) {
-
+                login.close();
             }
         });
     };
 
     self.loginBar();
-
-    // table webmasters
-    self.webmaster = function (webm) {
-        var item = this;
-
-        // console.log(webm);
-
-        item.webmaster = ko.observable(webm);
-    };
-
-    self.webmasters = function () {
-        self.webmasters_table = ko.observableArray();
-
-        $.get('json/webmasters.json', function (data) {
-            i = 0;
-            while(i < data.response.length) {
-                self.webmasters_table.push(new self.webmaster(data.response[i]));
-                i++;
-            }
-        });
-    };
-
-    self.webmasters();
 
     self.checkbox = function () {
         $('input:checkbox').each(function () {
@@ -109,6 +86,90 @@ var Partners = function () {
     };
 
     self.checkbox();
+
+    self.Webmasters = ko.observableArray();
+
+    WebmastersInit(self.Webmasters);
 };
 
-ko.applyBindings(new Partners());
+
+// webmasters init function
+var WebmastersInit = function (WebmastersArray) {
+
+    var wm = this;
+
+    // table webmasters
+    wm.Webmaster = function (webm) {
+        var item = this;
+        item.webmaster = ko.observable(webm);
+    };
+
+    // load webmasters
+    wm.loadWebmasters = function () {
+        $.get('json/webmasters.json', function (response) {
+            WebmastersArray($.map(response.response, function (item) {
+                return new wm.Webmaster(item);
+            }));
+        });
+    };
+
+    wm.loadWebmasters();
+};
+
+//dropdown declaration
+
+var Dropdown = function(className) {
+    var options = {};
+
+    options.elements = $(className);
+    options.currentClass = 'dropdown__current';
+    options.listingClass = 'dropdown__listing';
+    options.itemClass = 'dropdown__item';
+    options.linkClass = 'dropdown__link';
+
+    options.elements.each(function () {
+        var dropdown = {};
+        dropdown.element = $(this);
+        dropdown.listing = dropdown.element.find('.'+options.listingClass);
+        dropdown.current = dropdown.element.find('.'+options.currentClass);
+
+        // toggle action bind
+        dropdown.current.on('click', function () {
+            dropdown.toggle();
+        });
+
+        // toggle dropdown
+        dropdown.toggle = function () {
+            dropdown.listing.fadeToggle(200);
+            dropdown.current.toggleClass('active');
+        };
+
+        // open dropdown
+        dropdown.open = function () {
+            dropdown.listing.fadeIn(200);
+            dropdown.current.addClass('active');
+        };
+
+        // closing dropdown
+        dropdown.close = function () {
+            dropdown.listing.fadeOut(200);
+            dropdown.current.removeClass('active');
+        };
+    });
+
+    $doc.on('click', function (e) {
+        var $target = $(e.target);
+        if(!$target.hasClass(options.listingClass)
+            && !$target.closest('.'+options.currentClass).length > 0
+            && !$target.hasClass(options.currentClass)
+            && !$target.closest('.'+options.listingClass).length > 0
+        ) {
+            options.elements.find('.'+options.listingClass).fadeOut(200);
+        }
+    });
+};
+
+// dropdown init
+new Dropdown('.dropdown-wrapper');
+
+ko.applyBindings(new PartnersView());

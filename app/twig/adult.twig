@@ -1,0 +1,230 @@
+{% extends "layouts/app.twig" %}
+
+{% set roub = '<span class="icon-roub">₽</span>' %}
+
+{% block pageTitle %}Главная страница{% endblock %}
+
+{% block mainScreen %}
+	<div class="main-screen adult -text-center">
+		<div class="container">
+			<h1>Куда лить adult (адалт) трафик?</h1>
+			<h2>Золушка project активно покупает адалт-трафик <br>с оплатой за пополнение</h2>
+			<div class="mb70"></div>
+			<div class="main-screen__grid display-flex space-around">
+				<div class="main-screen__item -text-left">
+					<p class="main-screen__big-text">до 70%</p>
+					<p class="main-screen__small-text">по модели Share Revenue:</p>
+					<p class="main-screen__medium-text">От 50 до 70% со всех платных <br>сервисов в течении 6-ти месяцев</p>
+				</div>
+				<div class="main-screen__item -text-left">
+					<p class="main-screen__big-text">до 10%</p>
+					<p class="main-screen__small-text">по реферальаной программе</p>
+					<p class="main-screen__medium-text">от 5 до 10% за платные действия от <br>привлеченных вебмастеров</p>
+				</div>
+				<div class="main-screen__item -text-left">
+					<p class="main-screen__big-text">до 50%</p>
+					<p class="main-screen__small-text">На выплаты</p>
+					<p class="main-screen__medium-text">На следующий день после покупки <br>платного действия</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+	<div class="video mb50">
+		<img src="images/video-background@2x.jpg" alt="">
+		<i class="icon-play-video"></i>
+	</div>
+	<div class="in-numbers">
+		<div class="block-title -text-center mb30">Золушка Project в цифрах</div>
+		<div class="adult-numbers">
+			<div class="adult-numbers__grey-rectangle">
+				<p class="adult-numbers__purple-text -purple-text ff-semibold">18 часов</p>
+				<p class="adult-numbers__blue-text">Время принятие решения
+					<br>о покупке платных сервисов</p>
+			</div>
+			<div class="adult-numbers__purple-rectangle">
+				<div class="adult-number__white-title -white-text fz44 ff-semibold">4 месяца</div>
+				<div class="adult-number__white-text -white-text fz22 ff-semibold">Cреднее время жизни 1 клиента <br>(Life
+					Time):
+				</div>
+			</div>
+		</div>
+		<div class="in-numbers__bottom-grid display-flex space-around">
+			<div class="in-numbers__bottom-item adult-item">
+				<div class="in-numbers__bottom-purple-text ff-semibold dib -purple-text">
+					2800 {{ roub }}
+				</div>
+				<div class="in-numbers__bottom-text lh1 dib -grey-text">
+					Средний чек
+					<br>за месяц
+				</div>
+			</div>
+			<div class="in-numbers__bottom-item adult-item">
+				<div class="in-numbers__bottom-purple-text ff-semibold dib -purple-text">
+					5000 {{ roub }}
+				</div>
+				<div class="in-numbers__bottom-text lh1 dib -grey-text">
+					Средний заработок вебмастера <br>с 1 пользователя:
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="adult-conditions">
+				<div class="block-title white adult-conditions__title">Условия работы</div>
+				<div class="display-flex space-between flex-wrap mb30">
+					<div class="adult-conditions__section w48">
+						<div class="table">
+							<div class="tr">
+								<div class="td">
+									Кол-во активных клиентов*
+								</div>
+								<div class="td">
+									% от платных сервисов
+								</div>
+							</div>
+							<div class="tr">
+								<div class="td">1-50</div>
+								<div class="td">50%</div>
+							</div>
+							<div class="tr">
+								<div class="td">51-150</div>
+								<div class="td">60%</div>
+							</div>
+							<div class="tr">
+								<div class="td">>150</div>
+								<div class="td">70%</div>
+							</div>
+						</div>
+						<div class="adult-conditions__section-descr">
+							Активным клиентом считатьется пользователь купивший платных услуг более чем на 3000 рублей
+						</div>
+					</div>
+					<div class="adult-conditions__section w48">
+						<div class="table">
+							<div class="tr">
+								<div class="td">
+									Кол-во привлеченных веб-мастеров
+								</div>
+								<div class="td">
+									% от платных сервисов
+								</div>
+							</div>
+							<div class="tr">
+								<div class="td">1-5</div>
+								<div class="td">5%</div>
+							</div>
+							<div class="tr">
+								<div class="td">5-15</div>
+								<div class="td">10%</div>
+							</div>
+							<div class="tr">
+								<div class="td">>15</div>
+								<div class="td">15%</div>
+							</div>
+						</div>
+						<div class="adult-conditions__section-descr">
+							Активным привлеченным вебмастером считается вебмастер который привлек пользователей, купивших платных
+							услуг
+							более чем на 3000 рублей
+						</div>
+					</div>
+				</div>
+				<div class="-text-center">
+					<a href="#" class="button">Присоединиться</a>
+				</div>
+				<div class="-text-center -white-text">
+					*Вознаграждение выплачивается в течении 6 месяцев с момента регистрации
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- START paybacks -->
+	<div class="paybacks">
+		<div class="container">
+			<div class="block-title -text-center mb20">Способы выплат</div>
+			<div class="paybacks__subtitle -text-center mb50">Вы можеет выводить средства всеми указанными ниже способами
+			</div>
+
+			<div class="paybacks__grid display-flex space-between mb70">
+				<div class="paybacks__item">
+					<i class="icon-pc"></i>
+					<span class="dib">
+						Электорнные <br>платежи
+					</span>
+				</div>
+				<div class="paybacks__item">
+					<i class="icon-plastic"></i>
+					<span class="dib">
+						Платежные  <br>карты
+					</span>
+				</div>
+				<div class="paybacks__item">
+					<i class="icon-building"></i>
+					<span class="dib">
+						Банковский <br>перевод
+					</span>
+				</div>
+				<div class="paybacks__item">
+					<i class="icon-money"></i>
+					<span class="dib">
+						Наличный <br>перевод
+					</span>
+				</div>
+			</div>
+
+			<div class="paybacks__grid display-flex space-between">
+				<div class="paybacks__item">
+					<i class="icon-webmoney"></i>
+				</div>
+				<div class="paybacks__item">
+					<i class="icon-yad"></i>
+				</div>
+				<div class="paybacks__item">
+					<i class="icon-qiwi"></i>
+				</div>
+				<div class="paybacks__item">
+					<i class="icon-paypal"></i>
+				</div>
+				<div class="paybacks__item">
+					<i class="icon-visa"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // END paybacks -->
+
+	<!-- START bottom-form -->
+	<div class="bottom-form">
+		<div class="container small">
+			<div class="block-title white -text-center mb30">
+				Присоединиться к партнерской программе
+			</div>
+			<form action="#">
+				<div class="display-flex space-between mb20">
+					<div class="dib w32">
+						<input type="email" placeholder="Е-mail" class="db">
+					</div>
+					<div class="dib w32">
+						<input type="password" placeholder="Пароль" class="db">
+					</div>
+					<div class="dib w32">
+						<button class="button purple db">Зарегистрироваться</button>
+					</div>
+				</div>
+
+				<p class="policy-agreement -white-text -text-center ff-semibold mb10">
+					<input type="checkbox" checked>
+					Регистрируясь, вы подтверждаете, что ознакомились с
+					<a href="#" class="purple-link">правилами</a>
+					работы партнерской программы.
+				</p>
+				<p class="partner-office -white-text ff-semibold -text-center">Партнерский отдел: <a
+							href="mailto:partners@denim-app.ru" class="inherit">partners@denim-app.ru</a></p>
+			</form>
+		</div>
+	</div>
+	<!-- // END bottom-form -->
+{% endblock %}

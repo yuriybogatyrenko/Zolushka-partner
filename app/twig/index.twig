@@ -2,11 +2,34 @@
 
 {% set roub = '<span class="icon-roub">₽</span>' %}
 
-{% block pageTitle %}Главная страница{% endblock %}
+{% block pageTitle %}Adult traffic{% endblock %}
+
+{% block mainScreen %}
+	<div class="main-screen -text-center">
+		<div class="container">
+			<h1>Партнерская программа <br>Золушка project</h1>
+			<div class="mb70"></div>
+			<div class="main-screen__grid display-flex space-around">
+				<div class="main-screen__item">
+					<p class="main-screen__big-text">до 92 <span class="icon-roub bold">₽</span></p>
+					<p class="main-screen__small-text">за регистрацию</p>
+				</div>
+				<div class="main-screen__item">
+					<p class="main-screen__big-text">до 70%</p>
+					<p class="main-screen__small-text">с прибыли</p>
+				</div>
+				<div class="main-screen__item">
+					<p class="main-screen__big-text">до 50%</p>
+					<p class="main-screen__small-text">с рефералов</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
 
 {% block content %}
 	<div class="video mb50">
-		<img alt="" src="http://placehold.it/500x300"/>
+		<img src="images/video-background@2x.jpg" alt="">
 		<i class="icon-play-video"></i>
 	</div>
 	<div class="in-numbers">
@@ -72,12 +95,16 @@
 	<div class="count-profit -white-text">
 		<div class="container">
 			<div class="count-profit__inner">
-				<div class="count-profit__title -text-uppercase -white-text mb40 -text-uppercase ff-semibold">Расчитайте свою прибль</div>
+				<div class="count-profit__title -text-uppercase -white-text mb40 -text-uppercase ff-semibold">Расчитайте свою
+					прибль
+				</div>
 
 				<div class="display-flex space-between">
 					<div class="count-profit__big-item">
-						<input type="text" data-bind="value: trafficCount, valueUpdate: 'keyup'" placeholder="Укажите предполагаемый трафик, человек в день" class="db">
-						<p class="ff-semibold profit__bottom-count">Суммарный доход: <span data-bind="text: summaryProfit"></span> {{ roub }}/день</p>
+						<input type="text" data-bind="value: trafficCount, valueUpdate: 'keyup'"
+									 placeholder="Укажите предполагаемый трафик, человек в день" class="db">
+						<p class="ff-semibold profit__bottom-count">Суммарный доход: <span
+									data-bind="text: summaryProfit"></span> {{ roub }}/день</p>
 					</div>
 					<div class="count-profit__small-item">
 						<div class="count-profit__subtitle fz16 ff-semibold mb10">Доход с регистраций:</div>
@@ -101,7 +128,8 @@
 		<div class="container">
 			<div class="clearfix">
 				<div class="real-statistic__left">
-					<div class="real-statistic__title block-title">Статистика в режиме <br>реального времени и <br>отдельный личный кабинет
+					<div class="real-statistic__title block-title">Статистика в режиме <br>реального времени и <br>отдельный
+						личный кабинет
 					</div>
 					<a href="#" class="button">Присоединиться</a>
 				</div>
@@ -321,8 +349,11 @@
 
 	<div class="rating">
 		<div class="container">
-			<div class="rating__title fz20 ff-semibold -text-center">Рейтинг веб-мастеров партнерской программы сайта знакомств Золушка project</div>
-			<div class="rating__subtitle -lightgrey-text fz14 -text-center mb20">Любой веб-мастер может убрать свое присутствие в рейтинге отметив соответствующую
+			<div class="rating__title fz20 ff-semibold -text-center">Рейтинг веб-мастеров партнерской программы сайта
+				знакомств Золушка project
+			</div>
+			<div class="rating__subtitle -lightgrey-text fz14 -text-center mb20">Любой веб-мастер может убрать свое
+				присутствие в рейтинге отметив соответствующую
 				галочку в личном кабинете
 			</div>
 
@@ -337,19 +368,25 @@
 					<div class="td rating-table__header ff-semibold -text-right">Доход <br>c покупок</div>
 					<div class="td rating-table__header ff-semibold -text-right">Реферальный <br>доход</div>
 				</div>
-				<div class="table-group" data-bind="foreach: webmasters_table">
+				<div class="table-group" data-bind="foreach: Webmasters">
 					<div class="tr">
 						<div class="td" data-bind="text: webmaster().number"></div>
 						<div class="td">
 							<img src="" alt="" data-bind="attr: {src: webmaster().ava}" class="dib mr5 rating-table__avatar">
 							<span class="rating-table__value" data-bind="text: webmaster().name"></span>
 						</div>
-						<div class="td -text-right"><span class="rating-table__value" data-bind="text: webmaster().traffic"></span></div>
-						<div class="td -text-right"><span class="rating-table__value" data-bind="text: webmaster().regs"></span></div>
-						<div class="td -text-right"><span class="rating-table__value" data-bind="text: webmaster().confs"></span></div>
-						<div class="td -text-right"><span class="rating-table__value black" data-bind="text: webmaster().buys_income"></span> {{ roub }}</div>
-						<div class="td -text-right"><span class="rating-table__value black" data-bind="text: webmaster().regs_income"></span> {{ roub }}</div>
-						<div class="td -text-right"><span class="rating-table__value black" data-bind="text: webmaster().ref_income"></span> {{ roub }}</div>
+						<div class="td -text-right"><span class="rating-table__value" data-bind="text: webmaster().traffic"></span>
+						</div>
+						<div class="td -text-right"><span class="rating-table__value" data-bind="text: webmaster().regs"></span>
+						</div>
+						<div class="td -text-right"><span class="rating-table__value" data-bind="text: webmaster().confs"></span>
+						</div>
+						<div class="td -text-right"><span class="rating-table__value black"
+																							data-bind="text: webmaster().buys_income"></span> {{ roub }}</div>
+						<div class="td -text-right"><span class="rating-table__value black"
+																							data-bind="text: webmaster().regs_income"></span> {{ roub }}</div>
+						<div class="td -text-right"><span class="rating-table__value black"
+																							data-bind="text: webmaster().ref_income"></span> {{ roub }}</div>
 					</div>
 				</div>
 			</div>
@@ -364,7 +401,8 @@
 	<div class="paybacks">
 		<div class="container">
 			<div class="block-title -text-center mb20">Способы выплат</div>
-			<div class="paybacks__subtitle -text-center mb50">Вы можеет выводить средства всеми указанными ниже способами</div>
+			<div class="paybacks__subtitle -text-center mb50">Вы можеет выводить средства всеми указанными ниже способами
+			</div>
 
 			<div class="paybacks__grid display-flex space-between mb70">
 				<div class="paybacks__item">
@@ -493,7 +531,8 @@
 					<a href="#" class="purple-link">правилами</a>
 					работы партнерской программы.
 				</p>
-				<p class="partner-office -white-text ff-semibold -text-center">Партнерский отдел: <a href="mailto:partners@denim-app.ru" class="inherit">partners@denim-app.ru</a></p>
+				<p class="partner-office -white-text ff-semibold -text-center">Партнерский отдел: <a
+							href="mailto:partners@denim-app.ru" class="inherit">partners@denim-app.ru</a></p>
 			</form>
 		</div>
 	</div>

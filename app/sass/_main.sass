@@ -103,6 +103,20 @@ html, body
     font-family: futurademicregular
     font-size: 50px
     line-height: 1.05
+    margin: 33px 0
+    font-weight: normal
+
+  h2
+    font-size: 20px
+    color: #fff
+    opacity: 0.8
+    margin: 0
+    font-weight: normal
+    font-family: open_sanssemibold
+
+  &.adult
+    h1
+      margin-bottom: 20px
     
 .main-screen__big-text
   font-family: futurademicregular
@@ -116,15 +130,23 @@ html, body
   line-height: 1.5
   font-family: open_sanssemibold
 
+.main-screen__medium-text
+  font-size: 14px
+  color: #cfbbe1
+  line-height: normal
+  font-family: open_sanssemibold
+
 .video
-  margin: -150px auto 0
+  margin: -150px auto 50px
   width: 510px
   border: 2px solid #fff
   font-size: 0
   line-height: 0
+  position: relative
   border-radius: 5px
   box-shadow: 0 2px 54px 0 rgba(0, 0, 0, 0.25)
-  margin-bottom: 50px
+  +retina-bg("video-background.jpg", "video-background@2x.jpg", cover)
+  display: block
 
   img
     width: 100%
@@ -134,7 +156,7 @@ html, body
     position: absolute
     top: 50%
     left: 50%
-    +transform(translate3d(-50%, 50%, 0))
+    +transform(translate3d(-50%, -50%, 0))
     cursor: pointer
 
 .block-title
@@ -546,6 +568,9 @@ html, body
   .td
     vertical-align: middle
 
+.dropdown__link
+  text-decoration: none
+
 .popup
   background: #fff
   border-radius: 5px
@@ -563,3 +588,28 @@ html, body
 .close-popup__text-button
   text-decoration: none
   color: #2c2c2c
+
+.dropdown-wrapper
+  position: relative
+
+.dropdown__current
+  cursor: pointer
+
+.dropdown__listing
+  position: absolute
+  top: 100%
+  left: 0
+  min-width: 100%
+
+.lang-dropdown__item
+  margin: 8px 0
+
+.adult-numbers__purple-text
+  font-size: 60px
+
+.adult-conditions
+  background: linear-gradient(108deg, #0b007a, #ca17e7)
+  background: -webkit-linear-gradient(108deg, #0b007a, #ca17e7)
+  background: -moz-linear-gradient(108deg, #0b007a, #ca17e7)
+  background: -ms-linear-gradient(108deg, #0b007a, #ca17e7)
+  background: -o-linear-gradient(108deg, #0b007a, #ca17e7)
