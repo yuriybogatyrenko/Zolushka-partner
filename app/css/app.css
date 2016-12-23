@@ -1838,4 +1838,5 @@ html, body {
   background: -moz-linear-gradient(108deg, #0b007a, #ca17e7);
   background: -ms-linear-gradient(108deg, #0b007a, #ca17e7);
   background: -o-linear-gradient(108deg, #0b007a, #ca17e7);
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.4);
 }
