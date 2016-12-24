@@ -172,4 +172,66 @@ var Dropdown = function(className) {
 // dropdown init
 new Dropdown('.dropdown-wrapper');
 
+var Popup = function (className) {
+
+    var pop = {};
+
+    pop.overlay = $('.overlay');
+
+    $(className).each(function () {
+        var $this = $(this);
+
+        var closeBtn = $(this).find('.js-close-popup');
+
+        $doc.on('click', '.js-close-popup', function () {
+            pop.close($(this).closest('.popup'));
+        });
+    });
+
+    // example
+    // <a href="#" class="js-callPopup" data-popup-name="success">text</a>
+    $doc.on('click', '.js-callPopup', function (e) {
+        var name = $(this).attr('data-popup-name');
+        pop.show($('.popup[data-popup-name="'+name+'"]'));
+        e.preventDefault();
+    });
+
+    pop.close = function (el) {
+        pop.overlay.fadeOut(300, function () {
+            el.hide();
+        });
+        $('body').removeClass('ovh');
+    };
+
+    pop.show = function (el) {
+        el.siblings().hide().end().css({display: 'inline-block'});
+        $('body').addClass('ovh');
+        pop.overlay.fadeIn(300);
+    };
+
+    pop.overlay.click(function (e) {
+        if($(e.target).hasClass('popup') || $(e.target).closest('.popup').length > 0)
+            return;
+
+        e.preventDefault();
+        pop.overlay.fadeOut(300, function () {
+            $(className).hide();
+            $('body').removeClass('ovh');
+        });
+    });
+};
+
+new Popup('.popup');
+
+var scrollTo = function (block) {
+    $(block).click(function (e) {
+        var top = $($(this).attr("data-scrollto")).offset().top;
+
+        $('body, html').animate({scrollTop: top}, 1000)
+        e.preventDefault();
+    });
+};
+
+scrollTo('.js-scrollTo');
+
 ko.applyBindings(new PartnersView());

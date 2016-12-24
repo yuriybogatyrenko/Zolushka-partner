@@ -99,25 +99,27 @@
 					прибль
 				</div>
 
-				<div class="display-flex space-between">
+				<div class="display-flex space-between count-profit__grid">
 					<div class="count-profit__big-item">
 						<input type="text" data-bind="value: trafficCount, valueUpdate: 'keyup'"
 									 placeholder="Укажите предполагаемый трафик, человек в день" class="db">
-						<p class="ff-semibold profit__bottom-count">Суммарный доход: <span
-									data-bind="text: summaryProfit"></span> {{ roub }}/день</p>
+						<p class="ff-semibold profit__bottom-count">Суммарный доход: <span class="dib"><span
+										data-bind="text: summaryProfit"></span> {{ roub }}/день</span></p>
 					</div>
 					<div class="count-profit__small-item">
 						<div class="count-profit__subtitle fz16 ff-semibold mb10">Доход с регистраций:</div>
 						<p class="count-profit__small-text fz12 mb10">Текущий процент подтверждения регистраций: 59%</p>
 						<p class="count-profit__small-text fz12">Средняя конверсия в регистрации: 5%</p>
-						<p class="profit__bottom-count ff-semibold"><span data-bind="text: regProfit"></span> {{ roub }}/день</p>
+						<p class="profit__bottom-count ff-semibold"><span class="dib"><span
+										data-bind="text: regProfit"></span> {{ roub }}/день</span></p>
 					</div>
 					<div class="count-profit__small-item">
 						<div class="count-profit__subtitle fz16 ff-semibold mb10">Доход с платных сервисов:</div>
 						<p class="count-profit__small-text fz12 mb10">Время принятия решения о покупке платной услуги: 18
 							часов</p>
 						<p class="count-profit__small-text fz12">Конверсия в платежи: 7%</p>
-						<p class="ff-semibold profit__bottom-count"><span data-bind="text: paysProfit"></span> {{ roub }}/день</p>
+						<p class="ff-semibold profit__bottom-count"><span class="dib"><span
+										data-bind="text: paysProfit"></span> {{ roub }}/день</span></p>
 					</div>
 				</div>
 			</div>
@@ -397,144 +399,9 @@
 		</div>
 	</div>
 
-	<!-- START paybacks -->
-	<div class="paybacks">
-		<div class="container">
-			<div class="block-title -text-center mb20">Способы выплат</div>
-			<div class="paybacks__subtitle -text-center mb50">Вы можеет выводить средства всеми указанными ниже способами
-			</div>
+	{% include 'widgets/paybacks.twig' %}
 
-			<div class="paybacks__grid display-flex space-between mb70">
-				<div class="paybacks__item">
-					<i class="icon-pc"></i>
-					<span class="dib">
-						Электорнные <br>платежи
-					</span>
-				</div>
-				<div class="paybacks__item">
-					<i class="icon-plastic"></i>
-					<span class="dib">
-						Платежные  <br>карты
-					</span>
-				</div>
-				<div class="paybacks__item">
-					<i class="icon-building"></i>
-					<span class="dib">
-						Банковский <br>перевод
-					</span>
-				</div>
-				<div class="paybacks__item">
-					<i class="icon-money"></i>
-					<span class="dib">
-						Наличный <br>перевод
-					</span>
-				</div>
-			</div>
+	{% include 'widgets/reason.twig' %}
 
-			<div class="paybacks__grid display-flex space-between">
-				<div class="paybacks__item">
-					<i class="icon-webmoney"></i>
-				</div>
-				<div class="paybacks__item">
-					<i class="icon-yad"></i>
-				</div>
-				<div class="paybacks__item">
-					<i class="icon-qiwi"></i>
-				</div>
-				<div class="paybacks__item">
-					<i class="icon-paypal"></i>
-				</div>
-				<div class="paybacks__item">
-					<i class="icon-visa"></i>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- // END paybacks -->
-
-	<!-- START reason -->
-	<div class="reason">
-		<div class="container">
-			<div class="reason__header">
-				<div class="display-flex space-between">
-					<div class="block-title lh1">
-						<p>Зачем мы это делаем?</p>
-						<p>Все просто:</p>
-					</div>
-					<div class="reason__numbers">
-						<div class="display-flex space-between">
-							<div class="reason__number dating lh1 mr30">
-								<p class="dating__title ff-semibold fz20">Дейтинг в России</p>
-								<p class="dating__number ff-futura fz44">$ 50 млн/мес</p>
-								<p class="dating__descr fz20 ff-semibold">11 млн. человек в месяц</p>
-							</div>
-							<div class="reason__number dating lh1">
-								<p class="dating__title ff-semibold fz20">Дейтинг в Мире</p>
-								<p class="dating__number fz44 ff-futura">$ 5 млрд/год</p>
-								<p class="dating__descr fz20 ff-semibold">Прирост 10% в год</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="display-flex space-between flex-middle">
-				<div class="reason__content">
-					<div class="reason__content-title fz20 ff-semibold mb10">Партнерские программы сайтов знакомств</div>
-
-					<div class="reason__content-text">
-						<p>Дейтинг-сервисы в последнее время испытывают настоящий бум. По оценкам экспертов, объем отечественного
-							рынка
-							онлайн-знакомств составляет порядка $50 млн с ежемесячной аудиторией в 11 млн человек. В то же время
-							отечественным компаниям есть куда стремиться.</p>
-
-						<p>Мировой объем рынка интернет-знакомств к концу года приблизится
-							к $5 млрд с ежегодным приростом почти на 10 %. Дейтинговые сервисы, нащупывая тренды, в погоне за прибылью
-							ищут своего пользователя, становясь все более нишевыми. От этих тенденций стараются не отставать и наши
-							разработчики.</p>
-
-						<p>Одним из примеров таких нишевых сервисов в России является созданный год назад продукт «Золушка
-							Project», нацеленный только на тех, кто ищет так называемые «отношения по расчету». Сейчас принято
-							расширение
-							расширять бизнес и поэтому мы запускаем партнерскую программу.</p>
-					</div>
-				</div>
-				<div class="flex-item">
-					<i class="icon-broken-heart"></i>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- // END reason -->
-
-	<!-- START bottom-form -->
-	<div class="bottom-form">
-		<div class="container small">
-			<div class="block-title white -text-center mb30">
-				Присоединиться к партнерской программе
-			</div>
-			<form action="#">
-				<div class="display-flex space-between mb20">
-					<div class="dib w32">
-						<input type="email" placeholder="Е-mail" class="db">
-					</div>
-					<div class="dib w32">
-						<input type="password" placeholder="Пароль" class="db">
-					</div>
-					<div class="dib w32">
-						<button class="button purple db">Зарегистрироваться</button>
-					</div>
-				</div>
-
-				<p class="policy-agreement -white-text -text-center ff-semibold mb10">
-					<input type="checkbox" checked>
-					Регистрируясь, вы подтверждаете, что ознакомились с
-					<a href="#" class="purple-link">правилами</a>
-					работы партнерской программы.
-				</p>
-				<p class="partner-office -white-text ff-semibold -text-center">Партнерский отдел: <a
-							href="mailto:partners@denim-app.ru" class="inherit">partners@denim-app.ru</a></p>
-			</form>
-		</div>
-	</div>
-	<!-- // END bottom-form -->
+	{% include 'widgets/bottom-form.twig' %}
 {% endblock %}

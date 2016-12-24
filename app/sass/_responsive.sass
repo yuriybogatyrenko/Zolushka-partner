@@ -1,0 +1,175 @@
+@media screen and (max-width: 992px)
+  .main-screen__grid
+    display: block
+    text-align: center
+
+  .main-screen__item
+    margin: 20px auto
+    text-align: center
+
+  .video
+    max-width: 90%
+
+  .adult-numbers__grey-rectangle, .adult-numbers__purple-rectangle
+    width: 520px
+    max-width: 90%
+    display: block
+    margin: 0 auto
+    padding: 60px 20px 10px
+    text-align: center
+
+    &:before
+      width: 100%
+      height: 100%
+      background: #f7f7f7
+      border-radius: 10px 10px 0 0
+      
+  .adult-numbers__purple-rectangle
+    overflow: hidden
+    padding: 80px 20px 60px
+    &:before
+      background: linear-gradient(to bottom, #e023f2, #bd0fe1)
+      background: -webkit-linear-gradient(to bottom, #e023f2, #bd0fe1)
+      background: -moz-linear-gradient(to bottom, #e023f2, #bd0fe1)
+      background: -ms-linear-gradient(to bottom, #e023f2, #bd0fe1)
+      background: -o-linear-gradient(to bottom, #e023f2, #bd0fe1)
+      border-radius: 0 0 10px 10px
+
+    &:after
+      display: block
+      content: ''
+      position: absolute
+      top: 0
+      left: 50%
+      margin-left: -500px
+      border: 500px solid transparent
+      border-top: 50px solid #f7f7f7
+
+  .adult-conditions__inner
+    padding-left: 40px
+    padding-right: 40px
+
+  .adult-conditions__section
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 50px
+
+  .paybacks__item
+    width: 48%
+    margin: 0 0 40px
+
+  .paybacks__grid
+    text-align: center
+    margin-bottom: 30px
+
+  .reason__numbers
+    width: 100%
+    display: flex
+    justify-content: space-around
+
+  .reason__title
+    text-align: center
+    width: 100%
+    margin-bottom: 20px
+
+  .real-statistic
+    &:before
+      max-width: 40%
+
+  .real-statistic__title
+    font-size: 36px
+
+@media screen and (max-width: 768px)
+  .paybacks__item
+    width: 100%
+
+  .bottom-form__input-containers
+    > *
+      display: block
+      width: 100%
+      margin-bottom: 20px
+
+  .adult-numbers__purple-text
+    font-size: 40px
+
+  .in-numbers__bottom-item
+    display: block
+    width: 100%
+    margin: 0 0 20px
+    text-align: center
+
+  .in-numbers__bottom-purple-text
+    display: block
+    width: 100%
+    margin: 0 0 5px
+
+  .adult-conditions__inner
+    padding-left: 5px
+    padding-right: 5px
+    font-size: 14px
+
+  .adult-conditions__title
+    font-size: 34px
+
+  .in-numbers__bottom-grid
+    margin-bottom: 20px
+    
+  .in-numbers.adult
+    background-position: center -30px
+
+  .reason__numbers
+    > .display-flex
+      display: block
+
+  .reason__number
+    &:not(:last-child)
+      margin-bottom: 20px
+
+  .reason__content
+    width: 100%
+    margin: 0
+    order: 1
+
+
+  .broken-heart__flex
+    flex-direction: column
+    display: flex
+
+    .flex-item
+      width: 100%
+      text-align: center
+      margin-bottom: 30px
+
+  .offer-inner
+    padding-left: 0
+    
+  .offer
+    background: #FCC3EE
+
+  .count-profit__grid
+    flex-wrap: wrap
+
+  .count-profit__big-item, .count-profit__small-item
+    width: 100%
+    padding-bottom: 0
+    margin-bottom: 20px
+
+    .profit__bottom-count
+      position: static
+      padding-top: 10px
+
+  .count-profit__inner
+    padding: 20px
+
+  .real-statistic
+    padding: 40px 0
+    &:before
+      display: none
+
+    br
+      display: none
+
+    &__title
+      line-height: normal
+      margin-bottom: 20px
