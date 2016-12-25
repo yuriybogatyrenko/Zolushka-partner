@@ -88,6 +88,39 @@
 .icon-success
 	+sprite(icon-success)
 
+.header-mobile-menu
+	position: relative
+	width: 30px
+	height: 30px
+	display: inline-block
+	vertical-align: middle
+	margin-left: 15px
+
+.icon-header-mobile-menu
+	position: absolute
+	top: 50%
+	height: 2px
+	margin-top: -1px
+	width: 90%
+	display: block
+	background: #fff
+	+transition()
+
+	&:after, &:before
+		display: block
+		content: ''
+		position: absolute
+		top: -8px
+		+transition()
+		height: 2px
+		width: 100%
+		background: #fff
+
+	&:before
+		top: auto
+		bottom: -8px
+
+
 .close-popup
 	position: absolute
 	top: 10px
@@ -114,3 +147,10 @@
 	&:hover
 		&:before, &:after
 			background: #000
+
+.mobile-menu
+	.close-popup
+		&, &:hover
+			&:before, &:after
+				background-color: #fff
+

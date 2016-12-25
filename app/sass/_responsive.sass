@@ -1,7 +1,60 @@
+@media screen and (max-width: 1100px)
+  //.header-menu__flex
+  //  display: none
+
+  .header-right-nav
+    display: none
+
+  .header-mobile-menu
+    display: inline-block
+
+  .mobile-menu
+    display: block
+
+  .refferal
+    padding-left: 0
+    padding-right: 0
+
+  .icon-logo-round
+    position: relative
+    right: -15px
+
+  .icon-referal-person
+    position: relative
+    left: -15px
+
+  .refferal-arrow-green
+    position: relative
+    left: -20px
+
+  .refferal-arrow-orange
+    position: relative
+    right: -20px
+    z-index: 5
+
 @media screen and (max-width: 992px)
+  .big-arrow
+    background-image: linear-gradient(264deg, #89ebdd, #00bea4)
+    background-image: -webkit-linear-gradient(264deg, #89ebdd, #00bea4)
+    background-image: -moz-linear-gradient(264deg, #89ebdd, #00bea4)
+    background-image: -ms-linear-gradient(264deg, #89ebdd, #00bea4)
+    background-image: -o-linear-gradient(264deg, #89ebdd, #00bea4)
+    box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.07)
+    border-radius: 10px
+    padding: 20px
+
+    &:before
+      display: none
+
   .main-screen__grid
     display: block
     text-align: center
+
+  .header-menu__flex
+    display: none
+
+  .mobile-menu__item
+    display: block
 
   .main-screen__item
     margin: 20px auto
@@ -80,9 +133,140 @@
   .real-statistic__title
     font-size: 36px
 
-@media screen and (max-width: 768px)
+  .we-buy__left-item
+    font-size: 28px
+
+  .we-buy__right-item
+    font-size: 28px
+
+  .we-buy__border-bottom
+    border-width: 1px
+
+  .we-buy__left-side
+    width: 230px
+    padding: 10px
+
+  .we-buy__right-side
+    width: calc(100% - 230px - 30px)
+
+  .refferal-arrow-green
+    position: relative
+    background-image: linear-gradient(to bottom, #b4ed50, #429321)
+    background-image: -webkit-linear-gradient(to bottom, #b4ed50, #429321)
+    background-image: -moz-linear-gradient(to bottom, #b4ed50, #429321)
+    background-image: -ms-linear-gradient(to bottom, #b4ed50, #429321)
+    background-image: -o-linear-gradient(to bottom, #b4ed50, #429321)
+    box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.07)
+    left: auto
+    text-align: center
+    border-radius: 10px
+    padding: 30px 10px 30px 0
+    display: flex
+    align-items: center
+    justify-content: space-around
+    margin-bottom: 20px
+
+    &:before
+      +sprite(icon-small-person)
+      display: inline-block
+      position: static
+      +transform(none)
+
+    &__text
+      font-size: 12px
+      margin: 0
+
+  .refferal-arrow-orange
+    position: relative
+    background-image: radial-gradient(circle at 50% 0, #fbb849, #f68223)
+    background-image: -webkit-radial-gradient(circle at 50% 0, #fbb849, #f68223)
+    background-image: -moz-radial-gradient(circle at 50% 0, #fbb849, #f68223)
+    background-image: -ms-radial-gradient(circle at 50% 0, #fbb849, #f68223)
+    background-image: -o-radial-gradient(circle at 50% 0, #fbb849, #f68223)
+    box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.07)
+    right: auto
+    text-align: center
+    border-radius: 10px
+    padding: 30px 10px 30px 0
+    display: flex
+    align-items: center
+    justify-content: space-around
+    margin-bottom: 20px
+
+    &:before
+      +sprite(icon-small-lips)
+      display: inline-block
+      position: static
+      +transform(none)
+
+    &__text
+      font-size: 12px
+      margin: 0
+
+  .refferal-grid
+    display: block
+
+  .in-numbers__item
+    width: 90%
+    &.grey-rectangle
+      background: #f7f7f7
+      display: block
+      margin: 0 auto
+      max-width: 420px
+      border-radius: 10px 10px 0 0
+      padding: 20px 10px 0
+      &:before
+        display: none
+
+    &.purple-rectangle
+      background: linear-gradient(to bottom, #e023f2, #bd0fe1)
+      background: -webkit-linear-gradient(to bottom, #e023f2, #bd0fe1)
+      background: -moz-linear-gradient(to bottom, #e023f2, #bd0fe1)
+      background: -ms-linear-gradient(to bottom, #e023f2, #bd0fe1)
+      background: -o-linear-gradient(to bottom, #e023f2, #bd0fe1)
+      display: block
+      margin: 0 auto
+      max-width: 420px
+      border-radius: 0 0 10px 10px
+      padding: 80px 10px 40px
+      overflow: hidden
+      &:before
+        display: none
+      &:after
+        display: block
+        content: ""
+        position: absolute
+        top: 0
+        left: 50%
+        margin-left: -500px
+        border: 500px solid transparent
+        border-top: 50px solid #f7f7f7
+
+@media screen and (max-width: 767px)
+  .we-buy__cover
+    display: block
+
+  .we-buy__left-side
+    width: 100%
+    padding: 10px
+    margin-bottom: 30px
+
+  .we-buy__right-side
+    width: 100%
+
   .paybacks__item
     width: 100%
+
+  .referal__bottom-info
+    display: block
+
+  .referal__table-wrapper
+    width: 100%
+    margin-bottom: 20px
+
+  .refferal
+    .block-note
+      width: 100%
 
   .bottom-form__input-containers
     > *
@@ -173,3 +357,58 @@
     &__title
       line-height: normal
       margin-bottom: 20px
+
+  .popup__buttons
+    text-align: center
+    display: block
+
+  .popup
+    padding: 20px
+
+  .we-buy__right-top-flex
+    display: block
+
+  .we-buy__border-bottom
+    display: none
+
+  .we-buy__section
+    margin-bottom: 20px
+
+  .we-buy__right-item, .we-buy__left-item
+    display: inline
+
+  .in-numbers__bottom-grid
+    display: block
+    
+  .in-numbers
+    background-position: center -280px
+
+
+@media screen and (max-width: 560px)
+  .logo
+    background-position: left center
+    width: 37px
+
+  .avail-traffic__left, .avail-traffic__right
+    width: 100%
+    margin-bottom: 30px
+
+  .avail-traffic__right
+    padding-bottom: 0
+
+    .avail-traffic__listing
+      margin-bottom: 20px
+
+  .avail-traffic__note
+    position: static
+
+  .avail-traffic
+    display: block
+
+  .big-arrow__title
+    font-size: 20px
+    margin-bottom: 10px
+
+  .big-arrow__text
+    font-size: 12px
+    text-align: center

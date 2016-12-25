@@ -1,4 +1,5 @@
 $doc = $(document);
+$body = $('body');
 
 var PartnersView = function () {
     var self = this;
@@ -169,9 +170,6 @@ var Dropdown = function(className) {
     });
 };
 
-// dropdown init
-new Dropdown('.dropdown-wrapper');
-
 var Popup = function (className) {
 
     var pop = {};
@@ -200,12 +198,12 @@ var Popup = function (className) {
         pop.overlay.fadeOut(300, function () {
             el.hide();
         });
-        $('body').removeClass('ovh');
+        $body.removeClass('ovh');
     };
 
     pop.show = function (el) {
         el.siblings().hide().end().css({display: 'inline-block'});
-        $('body').addClass('ovh');
+        $body.addClass('ovh');
         pop.overlay.fadeIn(300);
     };
 
@@ -216,12 +214,10 @@ var Popup = function (className) {
         e.preventDefault();
         pop.overlay.fadeOut(300, function () {
             $(className).hide();
-            $('body').removeClass('ovh');
+            $body.removeClass('ovh');
         });
     });
 };
-
-new Popup('.popup');
 
 var scrollTo = function (block) {
     $(block).click(function (e) {
@@ -232,6 +228,53 @@ var scrollTo = function (block) {
     });
 };
 
-scrollTo('.js-scrollTo');
+var mobileMenu = function () {
+    var menu = {};
+
+    menu.block = $('.mobile-menu');
+    menu.button = $('.js-mobile-menu-button');
+    menu.closeBtn = $('.js-close-menu');
+    menu.overlay = $('.mobile-menu-overlay');
+
+
+    menu.open = function () {
+        menu.block.addClass('active');
+        menu.overlay.show();
+        $body.addClass('ovh');
+    };
+
+    menu.close = function () {
+        menu.block.removeClass('active');
+        $body.removeClass('ovh');
+        menu.overlay.hide();
+    };
+
+    menu.closeBtn.click(function () {
+        menu.close();
+        console.log('close');
+    });
+
+    menu.button.click(function () {
+        menu.open();
+    });
+
+    menu.overlay.click(function () {
+        menu.close();
+    });
+};
+
+$doc.ready(function () {
+    // mobile-menu init
+    new mobileMenu();
+
+    // scrollTo init
+    new scrollTo('.js-scrollTo');
+
+    // popup init
+    new Popup('.popup');
+
+    // dropdown init
+    new Dropdown('.dropdown-wrapper');
+});
 
 ko.applyBindings(new PartnersView());
