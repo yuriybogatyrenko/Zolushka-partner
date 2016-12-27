@@ -187,6 +187,7 @@ gulp.task('build',["clean"], function(){
         gulp.start('build_dist');
         gulp.start('fonts');
         gulp.start('images');
+        gulp.start('json');
     }, 500);
 });
 
@@ -197,6 +198,13 @@ gulp.task('build_dist', function(){
         .pipe(gulpif('*.css', minifyCss()))
         .pipe(useref())
         .pipe(gulp.dest('dist'));
+});
+
+gulp.task('json', function () {
+    gulp.src([
+        'app/json/**'
+    ])
+        .pipe(gulp.dest('dist/json'));
 });
 
 gulp.task('fonts', function () {
