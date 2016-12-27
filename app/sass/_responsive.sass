@@ -46,6 +46,20 @@
     &:before
       display: none
 
+  .header-right-activities
+    position: static
+
+  .header
+    position: relative
+
+  .login-bar
+    left: 10%
+    width: 80%
+    box-sizing: border-box
+    
+    &:after
+      display: none
+      
   .main-screen__grid
     display: block
     text-align: center
@@ -243,6 +257,14 @@
         border-top: 50px solid #f7f7f7
 
 @media screen and (max-width: 767px)
+  .login-bar__form-wrapper
+    display: block
+    margin-bottom: 0
+    & > *
+      width: 100%
+      box-sizing: border-box
+      margin-bottom: 15px
+    
   .we-buy__cover
     display: block
 
